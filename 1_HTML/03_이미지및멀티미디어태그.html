@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이미지 및 멀티미디어 태그</title>
+  </head>
+  <body>
+    <h2>이미지 관련 태그</h2>
+
+    <!--절대경로는 사용하지 않음-->
+    <!--기본적으로 상대경로 사용-->
+    <img src="../resources/city.jpg" alt="이 사진은 도시사진" />
+
+    <h3>width와 height(높이) 속성</h3>
+
+    <h4>
+      고정길이단위 (px)= 기본값: 화면사이즈가 조정이 되도 이미지 크기는 변동
+      없음
+    </h4>
+
+    <img
+      src="../resources/blueberries.jpg"
+      alt="이 사진은 블루베리"
+      width="200px"
+      height="120px"
+    />
+    <img
+      src="../resources/cake.jpg"
+      alt="이 사진은 케이크"
+      width="200"
+      height="120"
+    />
+    <img
+      src="../resources/icecream.jpg"
+      alt="이 사진은 아이스크림"
+      width="200"
+      height="120"
+    />
+    <img
+      src="../resources/macarons.jpg"
+      alt="이 사진은 마카롱"
+      width="200"
+      height="120"
+    />
+    <img
+      src="../resources/pizza.jpg"
+      alt="이 사진은 피자"
+      width="200"
+      height="120"
+    />
+
+    <h4>
+      가변길이단위(%) : 화면사이즈 또는 부모태그사이즈에 따라 이미지 크기도 같이
+      변동
+      <!-- width(가로)와 height(세로)를 동시에 사용하면 화면이 깨지기 때문에 둘중 한가지만 사용 -->
+    </h4>
+
+    <img
+      src="../resources/blueberries.jpg"
+      alt="이 사진은 블루베리"
+      width="15%"
+    />
+    <img src="../resources/cake.jpg" alt="이 사진은 케이크" width="15%" />
+    <img
+      src="../resources/icecream.jpg"
+      alt="이 사진은 아이스크림"
+      width="15%"
+    />
+    <img src="../resources/macarons.jpg" alt="이 사진은 마카롱" width="15%" />
+    <img src="../resources/pizza.jpg" alt="이 사진은 피자" width="15%" />
+
+    <h2>미디어 관련 태그</h2>
+
+    <h3>오디오 관련 태그</h3>
+
+    <!--
+        controls : 재생도구 출력 여부
+        loop : 반복 재생여부 지정
+    -->
+
+    <audio src="../resources/audio.mp3" controls loop></audio>
+
+    <h3>비디오 관련 태그</h3>
+    <video src="../video.mp4" controls loop></video>
+
+    <iframe
+      width="949"
+      height="534"
+      src="https://www.youtube.com/embed/6WZ67f9M3RE"
+      title="모던한 카페에서 나오는 고급스러운 피아노 음악 l GRASS COTTON+"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+
+    <iframe
+      width="949"
+      height="534"
+      src="https://www.youtube.com/embed/Fley6IFhlC8"
+      title="Git, Github의 개념과 초간단 깃허브 코드 올리기"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+  </body>
+</html>

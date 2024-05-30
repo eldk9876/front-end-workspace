@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실습문제 변형 3</title>
+  </head>
+  <body>
+    <h2>주문하기</h2>
+    <!--
+    name : 서버에 보낼 때 담을 공간명
+    value : 서버에 보낼 때 name 공간에 담을 값
+
+    id : 태그의 고유 명칭 부여
+    for : input의 id와 연결
+    -->
+
+    <!--카멜케이스 기법, 스네이크 기법-->
+    <form action="" method="get">
+      <label for="nickName">고객명:</label>
+      <input type="text" name="userName" id="nickName" /><br /><br />
+      <label for="phone">전화번호:</label>
+      <input type="text" name="phone" id="phone" /><br /><br />
+      <!--해외에서 전화번호 볼때 ?-->
+      <label for="email">E-mail:</label>
+      <input type="email" name="email" id="email" />
+      <br /><br />
+
+      <fieldset>
+        <legend>피자 사이즈</legend>
+        <input type="radio" name="size" id="Small" value="Small" />
+        <label for="Small">Small</label><br /><br />
+
+        <input type="radio" name="size" id="Medium" value="Medium" />
+        <label for="Medium">Medium</label><br /><br />
+
+        <input type="radio" name="size" id="Large" value="Large" />
+        <label for="Large">Large</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>토핑 선택</legend>
+        <!--(input:checkbox[name="Topping"]+label)*4-->
+        <input type="checkbox" name="topping" value="bacon" id="bacon" />
+        <label>베이컨</label>
+        <input type="checkbox" name="topping" value="cheese" id="cheese" />
+        <label>치즈</label>
+        <input type="checkbox" name="topping" value="onion" id="onion" />
+        <label>양파</label>
+        <input type="checkbox" name="topping" value="mushroom" id="mushroom" />
+        <label>버섯</label>
+      </fieldset>
+      <br />
+
+      <label for="time">희망 배송 시간:</label>
+      <input type="time" name="time" id="time" />
+
+      <br /><br />
+      <label for="memo">배송 시 요청사항:</label>
+      <textarea
+        name="memo"
+        id="memo"
+        placeholder="내용을 입력하세요"
+        style="resize: none"
+        cols="30"
+        rows="10"
+      ></textarea>
+      <!--cols 는 단어 수  rows 는 줄 수-->
+
+      <button type="submit">주문하기</button>
+    </form>
+  </body>
+</html>

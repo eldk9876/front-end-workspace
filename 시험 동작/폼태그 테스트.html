@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>폼 태그</title>
+  </head>
+  <body>
+    <h2>폼 태그의 기본 구조</h2>
+
+    <h3>검색 폼</h3>
+
+    <form
+      action="http://127.0.0.1:3000/%EC%8B%9C%ED%97%98%20%EB%8F%99%EC%9E%91/%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20%EC%9E%91%EC%84%B1%20%EC%A0%84%20Test.html"
+      method="get"
+    >
+      <!--Post는 보안이 필요할때 사용-->
+      <label for="search"> 검색할 내용: </label>
+      <input type="text" name="keyword" id="search" />
+
+      <input type="submit" value="검색" />
+      <!-- ?에 key값과 value값을 보내야함 -->
+    </form>
+
+    <h3>회원가입 폼</h3>
+  </body>
+</html>

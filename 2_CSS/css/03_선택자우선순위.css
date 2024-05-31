@@ -1,0 +1,17 @@
+#id1 {
+  background: skyblue;
+}
+.class1 {
+  background: yellowgreen;
+  color: red;
+}
+/*!important -> 모든 우선순위를 무시하고 강제 부여 (응급상황에만!!)*/
+div {
+  background: teal !important;
+  color: white !important;
+  width: 200px;
+  height: 200px;
+}
+div {
+  background: pink;
+}

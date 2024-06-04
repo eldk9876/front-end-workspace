@@ -2,37 +2,28 @@
   font-family: "Gugi", sans-serif;
 }
 
-#color {
-  background-color: indianred;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-#background {
-  border: 1px solid;
-  height: 800px;
+#body {
   background-color: indianred;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  background-position: center;
-
-  background-attachment: fixed;
+  position: absolute;
 }
 
 .display {
   margin: 20px 100px;
 }
 .line {
-  border: 1px solid;
+  border: 2px solid;
   color: white;
+  text-decoration: none;
 }
 
 #ru {
   border-radius: 10px;
-
-  width: 300px;
-  height: 350px;
   text-align: center;
-
   font-weight: bold;
 
   margin: 100px 800px;
@@ -43,14 +34,23 @@
   margin: 10px;
 }
 
+#Git {
+  color: white;
+  text-decoration: none;
+}
+
 #InstaGram {
   text-align: center;
   padding: 15px;
   margin: 10px;
 }
 
-#border {
-  border: 1px solid;
+#Ins {
+  color: white;
+  text-decoration: none;
+}
+
+#ba {
   border-radius: 50px;
   background-position: center;
   background-image: url(/resources/bao.jpg);

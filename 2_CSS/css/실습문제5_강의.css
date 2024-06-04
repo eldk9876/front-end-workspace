@@ -1,0 +1,76 @@
+header {
+  background-color: white;
+  width: 100%;
+  flex-wrap: wrap;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+}
+.LOGO {
+  margin: 1%;
+  font-weight: bold;
+}
+nav {
+  margin: 1%;
+}
+.Head {
+  color: black;
+  text-decoration: none;
+}
+
+.heading {
+  display: inline-block;
+  background-clip: border-box;
+}
+
+nav a {
+  padding: 10px;
+}
+
+nav a:hover {
+  background-color: black;
+  color: white;
+}
+
+section {
+  height: 100vh;
+  text-align: center;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+h2 {
+  text-align: center;
+  align-content: center;
+  font-weight: bold;
+}
+
+.head1 {
+  background-color: red;
+}
+.head2 {
+  background-color: blueviolet;
+}
+.head3 {
+  background-color: yellow;
+}
+
+p {
+  width: 70%;
+  margin: 20px auto;
+}
+
+.TOP {
+  text-align: center;
+  align-content: center;
+
+  position: fixed;
+  top: 80%;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+}

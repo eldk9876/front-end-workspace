@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: indianred;
+  background: linear-gradient(purple, pink);
+  height: 100vh;
+  padding: 20px;
+}
+
+.profile-card {
+  text-align: center;
+  width: 320px;
+  /* height: 300px; 정말로 필요한 경우가 아니면 지정하지 않음 */
+  border: 2px solid white;
+
+  /* 포지션용
+  position: absolute;
+  top:20px;
+  left: 50%;
+  transform: translate(-50%); /*나중에 배움*/
+
+  margin: /* 20px*/ auto; /*20px은 상하값 auto값은 좌우 값*/
+  border-radius: 5%; /*모서리를 깍아줌*/
+}
+
+.profile-image {
+  background-image: url(../../resources/bao.jpg);
+  background-size: cover; /*cover는 양쪽을 다 맞춰줌*/
+  background-position: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 20px auto;
+}
+
+.profile-card img /*.profile-card 밑에 img */ {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 20px auto;
+}
+
+.profile-card h2 {
+  color: white;
+  margin-top: 10px;
+}
+
+.profile-card a {
+  border: 2px solid white;
+  display: block;
+  margin: 15px 10px;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+
+  /* ex
+    height: 40px;
+    line-height: 40px; /*height와 같은 크기로 지정하면 글이 중간으로 옮겨짐*/
+}
+
+.profile-card a:hover {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+}

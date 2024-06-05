@@ -1,0 +1,58 @@
+body {
+  background: linear-gradient(45deg, black, blue);
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.square {
+  box-sizing: border-box;
+  height: 50px;
+  width: 13px;
+  background-color: white;
+  color: white;
+  border: 1px solid;
+  display: flex;
+  margin: 3px;
+  border-radius: 30%;
+  animation: Ani 1s linear infinite;
+}
+.square:nth-child(1),
+.square:nth-child(7) {
+  animation-delay: 1s;
+}
+.square:nth-child(2),
+.square:nth-child(6) {
+  animation-delay: 200ms;
+}
+.square:nth-child(3) {
+  animation-delay: 300ms;
+}
+.square:nth-child(4) {
+  animation-delay: 4s;
+}
+.square:nth-child(5) {
+  animation-delay: 3s;
+}
+
+@keyframes Ani {
+  0% {
+    transform: scaleY(1);
+  }
+  20% {
+    transform: rotateY(80deg);
+  }
+
+  50% {
+    transform: scaleY(1.2);
+  }
+  70% {
+    transform: rotateY(-80deg);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}

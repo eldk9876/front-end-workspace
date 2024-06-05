@@ -1,0 +1,56 @@
+header {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  position: fixed;
+  width: 30%;
+  height: 100vh;
+  flex-direction: column;
+
+  color: white;
+}
+
+#img {
+  background-image: url(../../resources/background.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+header h1 {
+  margin-top: 200px;
+  margin-bottom: 300px;
+  font-size: 100px;
+  font-weight: bold;
+}
+header nav a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  align-content: center;
+  color: white;
+  margin: 10px;
+  font-size: 30px;
+}
+
+header nav :hover {
+  color: aqua;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  padding-left: 30%;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#content {
+  width: 700px;
+  height: 400px;
+  align-items: center;
+}

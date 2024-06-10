@@ -1,5 +1,35 @@
-#bady {
-  background-image: url(../resources/lighthouse-8650151_1280.jpg);
+body {
+  background-image: url(../resources/ai-generated-8774959_1280.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  color: white;
+}
+
+body h1 {
+  display: flex;
+  font-weight: bold;
+  font-size: 50px;
+  justify-content: center;
+}
+
+h3 {
+  font-size: 30px;
+  color: red;
+  margin: 10px;
+}
+h4 {
+  font-size: 30px;
+  color: red;
+  margin: 10px;
+}
+
+.href {
+  margin: 10px;
+  color: yellow;
+  text-decoration: none;
+}
+
+.center {
+  display: flex;
+  margin: auto;
 }

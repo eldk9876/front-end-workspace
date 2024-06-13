@@ -1,0 +1,67 @@
+body h1 {
+  font-weight: bold;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+body p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imges {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  object-fit: cover;
+}
+
+.imges img {
+  margin: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#click {
+  font-size: 30px;
+  font-weight: bolder;
+  border: none;
+  cursor: pointer;
+  background-color: hotpink;
+  color: darkblue;
+  border-radius: 10%;
+  padding: 10px;
+  margin: 10px;
+}
+
+#restart {
+  font-size: 30px;
+  border: white;
+  background-color: darkblue;
+  color: hotpink;
+  border-radius: 10%;
+  padding: 10px;
+  margin: 10px;
+  font-weight: bolder;
+  border: none;
+  cursor: pointer;
+}
+
+#result {
+  font-size: 1.4rem;
+  font-weight: bold;
+  font-style: italic;
+}

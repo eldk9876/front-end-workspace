@@ -9,15 +9,34 @@
     <!-- Q1. 100 ~ 200 정수 중 5의 배수가 아닌 수를 출력하세요 -->
     <script>
       console.log(`-----Q1----`);
-      const i = 100;
-      const j = 200;
-      const k = 5;
+      for (let number = 100; number <= 200; number++) {
+        if (number === 200) {
+          break;
+        }
+        if (number % 5 === 0) {
+          continue;
+        }
+        console.log(number);
+      }
 
       console.log(i, j);
     </script>
     <!-- Q2. 1 ~ 1000 정수 중 3의 배수의 합계를 출력하세요 -->
     <script>
       console.log(`-----Q2----`);
+      let numverr = 0;
+      let number = 0;
+      for (let number = 1; number <= 1000; number++) {
+        if (number == 1000) {
+          break;
+        }
+        if (number % 3) {
+          continue;
+        }
+        numverr = numverr + number;
+
+        console.log(numverr);
+      }
     </script>
 
     <!-- Q3. 문자열의 문자들을 하나씩 출력하세요 -->
@@ -41,6 +60,72 @@
     -->
     <script>
       console.log(`-----Q5----`);
+      console.log(`-----1 ~ 까지는 가능----`);
+      for (let number = 1; number <= 10; number++) {
+        if (number === 10) {
+          break;
+        } else if (number == 1 && number % 1 == 1) {
+          /*
+        if (1 && number % 2 == 2) {
+          continue;
+        } else if (number % 2 == 0 && number % 4 == 0) {
+          continue;
+        } else if (
+          (1 && number % 3 == 3) ||
+          number % 6 == 0 ||
+          number % 9 == 0
+        ) {
+          continue;
+        }
+          
+*/
+          continue;
+        } else if (number == 1 && number % 2 == 0) {
+          continue;
+        } else if (number == 1 && number % 3 == 0) {
+          continue;
+        } else if (number == 1 && number % 4 == 0) {
+          continue;
+        } else if (number == 1 && number % 5 == 0) {
+          continue;
+        } else if (number == 1 && number % 6 == 0) {
+          continue;
+        } else if (number == 1 && number % 7 == 0) {
+          continue;
+        } else if (number == 1 && number % 8 == 0) {
+          continue;
+        } else if (number == 1 && number % 9 == 0) {
+          continue;
+        } else if (number % 2 == 0 && number % 4 == 0) {
+          continue;
+        } else if (number % 2 == 0 && number % 6 == 0) {
+          continue;
+        } else if (number % 3 == 0 && number % 6 == 0) {
+          continue;
+        } else if (number % 2 == 0 && number % 8 == 0) {
+          continue;
+        } else if (number % 3 == 0 && number % 9 == 0) {
+          continue;
+        } else if (number % 2 == 0 && number % 10 == 0) {
+          continue;
+        } else if (number % 2 == 0 && number % 14 == 0) {
+          continue;
+        } else if (number % 3 == 0 && number % 15 == 0) {
+          continue;
+        } else if (number % 7 == 0 && number % 21 == 0) {
+          continue;
+        } else if (number % 2 == 0 && number % 22 == 0) {
+          continue;
+        } else if (number % 5 == 0 && number % 25 == 0) {
+          continue;
+        } else if (number % 2 == 0 && number % 26 == 0) {
+          continue;
+        } else if (number % 3 == 0 && number % 33 == 0) {
+          continue;
+        }
+
+        console.log(number);
+      }
     </script>
 
     <!-- Q6. 배열 안의 데이터를 모두 2배로 만들어서 출력하세요 -->
@@ -89,7 +174,9 @@
       const a2 = [12, 0, 2, 5, 4];
       const b2 = [0, 2, 3, 12, 8];
       const c2 = [];
-
+      // 같은 값 찾기
+      // 찾은 값으로 배열 만들기
+      // 데이터가 배열에 있으면 찿기
       if (c2) {
         console.log(true);
       } else {

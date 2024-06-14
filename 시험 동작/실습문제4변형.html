@@ -42,6 +42,24 @@
       console.log(`-----Q2----`);
       const str = "안녕하세요. 반갑습니다!".split("");
       console.log(str);
+
+      const strarr = str.join(" ");
+      console.log(strarr);
+
+      for (let i = 0; i < str.length; i++) {
+        for (let j = 0; j < str[i].length; j++) {
+          console.log(str[i][j]);
+        }
+      }
+
+      /*
+      for (strarr = 1; strarr.length-1; strarr++) {
+        if (strarr === 20) {
+          break;
+        }
+        console.log(strarr);
+    }
+        */
     </script>
 
     <!-- Q4. 배열 값 중 최대값을 출력하세요 -->
@@ -58,9 +76,9 @@
     -->
     <script>
       console.log(`-----Q5----`);
-      console.log(`-----1 ~ 까지는 가능----`);
-      for (let number = 1; number <= 10; number++) {
-        if (number === 10) {
+      console.log(`-----1 ~ 10까지는 가능----`);
+      for (let number = 1; number <= 100; number++) {
+        if (number === 100) {
           break;
         } else if (number == 1 && number % 1 == 1) {
           /*
@@ -169,28 +187,69 @@
     -->
     <script>
       console.log(`-----Q9----`);
+
       const a2 = [12, 0, 2, 5, 4];
       const b2 = [0, 2, 3, 12, 8];
-      const c2 = [];
-      // 같은 값 찾기
+      const c2 = [a2, b2];
+
+      // 같은 값 찾기]
+      /*
+      const A2 = a2.join(" ");
+      console.log(A2);
+      const B2 = b2.join(" ");
+      console.log(B2);
+
+      const C2 = c2.join(",");
+      console.log(C2);
+      console.log(`-----Q9----`);
+      const strArr = `${C2}`.split(", ");
+      console.log(strArr);
+*/
+      for (let i = 0; i < c2.length; i++) {
+        for (let j = 0; j < c2[i].length; j++) {
+          console.log(c2[i], c2[j]);
+        }
+
+        /*  c2 = c2 + a2;*/
+        console.log[c2];
+      }
+
       // 찾은 값으로 배열 만들기
+
       // 데이터가 배열에 있으면 찿기
 
       console.log(`-----Q9 test-1 단일 문구 사용가능----`);
       console.log(a2.includes(12));
       console.log(a2.includes(6));
-      /*console.log(strArr.includes(1));*/
+      /*console.log(strArr.includes(12));*/
 
       console.log(`-----Q9 test-2 데이터값 읽어들이기 사용가능----`);
       const C1 = prompt(`데이터를 입력하세요`);
       console.log(`데이터= ` + C1);
       console.log(C1.includes(a2));
 
-      if (C1 === a2.includes(C1)) {
+      if (a2.includes(C1)) {
         console.log(`true 입니다`);
       } else {
         console.log(`false 아닙니다`);
       }
+      /*
+      console.log("--- for of ---");
+      for (const a2 of b2) {
+        console.log(c2);
+      }
+
+      const arRay = a2.map(function (value) {
+        return value;
+      });
+      const arRay2 = b2.map(function (value) {
+        return value;
+      });
+      const arRay3 =(arRay+ arRay2) ;
+      console.log(arRay);
+      console.log(arRay2);
+      console.log(arRay3);
+    */
     </script>
 
     <!-- Q10. 2차원 배열에는 3명의 학생의 4과목 성적이 들어 있습니다. 각 학생들의 합계와 평균을 출력하세요 -->

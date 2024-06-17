@@ -6,6 +6,14 @@
     <title>Document</title>
     <link rel="stylesheet" href="../2_CSS/css/reset.css" />
     <link rel="stylesheet" href="실습문제8강의.css" />
+    <link rel="icon" href="https://www.youtube.com/s/desktop/ae4ecf92/img/favicon_144x144.png">
+
+    <script
+    src="https://kit.fontawesome.com/ef885bd654.js"
+    crossorigin="anonymous"
+  ></script>
+
+
   </head>
   <body>
     <form action="">
@@ -16,6 +24,7 @@
           첫글자는 반드시 영문자로, 그리고 영문자, 숫자 포함하여 총 4 ~ 12자로
           입력하시오.
         </span>
+        
       </div>
       <label for="userId2">* 아이디2 : </label>
       <input type="text" id="userId2" name="userId2" />
@@ -24,6 +33,20 @@
         입력하시오.
       </span>
     </div>
+
+<div>
+      <label for="userId3">* 아이디3</label>
+      <input type="text"  name="userId3" id="userId3">
+      <a href="">
+      <i class="fa-solid fa-house"></i>
+      <Span id="userId3Span">
+        첫글자는 반드시 한글로, 그리고 영문자, 숫자, 특수문자 포함하여 총 4 ~ 12자로
+        입력하시오.
+      </Span></a>
+
+
+</div>
+
 
       <div>
         <label for="userPwd">* 비밀번호 : </label>
@@ -50,16 +73,15 @@
       <div>
 
         <label for="email">* 이메일 : </label>
-        
         <input type="text" id="email" name="email" />
         
      
-        <selectc > 
+        <select > 
           <option value="naver.com">naver.com</option>
-          <option value="gyeonggi.com">gmail.com</option>
-          <option value="google.com">google.com</option>
+          <option value="google.com">gmail.com</option>
+          <option value="hanmail.net">hanmail.net</option>
    
-        </selectc>
+        </select>
         
 
         <span id="emailSpan"> 이메일 형식에 맟춰서 입력하시오. </span>

@@ -134,7 +134,7 @@ userId2.addEventListener("input",function(){ // input이 될때마다 동작시�
         userId2Span.innerHTML = "첫글자는 반드시 숫자로, 그리고 영문자, 숫자, 특수문자 포함하여 총 4 ~ 12자로 입력하시오. !"
     }
 });*/
-
+/*
 const userId2 = document.querySelector("#userId2");
 const userId2Span = document.querySelector("#userId2Span");
 
@@ -149,5 +149,41 @@ userId2.addEventListener("input", function () {
     userId2Span.style.color = "red";
     userId2Span.innerHTML =
       "첫글자는 반드시 숫자로, 그리고 영문자, 숫자, 특수문자 포함하여 총 4 ~ 12자로 입력하시오.";
+  }
+});
+*/
+
+/*
+const userId3 = document.querySelector("#userId3");
+const userId3Span = document.querySelector("#userId3Span");
+
+userId3.addEventListener("input", function(){
+      const regExp = /^[가-힣][!-~]{3,11}$/; 
+      const Start = regExp.test(userId3.value);
+
+    if(Start){
+      userId3Span.style.color = "skyblue";
+      userId3Span.innerHTML = "OK!";
+    } else {
+      userId3Span.style.color = "red";
+      userId3Span.innerHTML =  "첫글자는 반드시 한글로, 그리고 영문자, 숫자, 특수문자 포함하여 총 4 ~ 12자로 입력하시오."
+    }
+
+});*/
+
+const userId3 = document.querySelector("#userId3");
+const userId3Span = document.querySelector("#userId3Span");
+
+userId3.addEventListener("input", function () {
+  const regExp = /^[가-힣][!-~]{3,11}$/;
+  const start = regExp.test(userId3.value);
+
+  if (start) {
+    userId3Span.style.color = "blue";
+    userId3Span.innerHTML = "OK!";
+  } else {
+    userId3Span.style.color = "red";
+    userId3Span.innerHTML =
+      "첫글자는 반드시 한글로, 그리고 영문자, 숫자, 특수문자 포함하여 총 4 ~ 12자로 입력하시오.";
   }
 });

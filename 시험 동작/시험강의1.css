@@ -1,0 +1,65 @@
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid;
+}
+header {
+  background-color: skyblue;
+  display: flex;
+  height: 50px;
+  border-bottom: 1px solid;
+}
+
+.header-item {
+  flex: 1;
+  text-align: center;
+  line-height: 50px;
+  border-right: 1px solid;
+}
+.header-item:nth-child(4) {
+  flex-grow: 2;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.header-item:last-child {
+  border-right: none;
+}
+
+nav {
+  height: 40px;
+  line-height: 40px;
+  padding-left: 20px;
+  border-bottom: 1px solid;
+}
+main {
+  height: 100%;
+  display: flex;
+}
+
+main > div {
+  flex: 1;
+}
+
+.main-left {
+  background-image: url("../resources/product.jpg");
+  background-position: center;
+  background-size: cover;
+  border-right: 1px solid;
+}
+.main-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main-right h2 {
+  font-weight: bold;
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+.main-right p {
+  line-height: 1.5;
+  width: 80%;
+  text-align: center;
+}

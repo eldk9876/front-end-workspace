@@ -1,0 +1,50 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 30px;
+}
+
+form {
+  width: 60%;
+}
+
+.form-content {
+  display: flex;
+  margin-bottom: 5px;
+}
+.form-content label {
+  width: 150px;
+  font-weight: bold;
+  margin-top: 16px;
+}
+.form-content div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.form-content input {
+  padding: 12px 10px;
+  margin-bottom: 5px;
+}
+.form-content span {
+  height: 20px;
+  color: red;
+}
+
+button {
+  width: 100%;
+  background: black;
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  padding: 15px;
+}

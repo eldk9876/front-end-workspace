@@ -5,6 +5,10 @@ body {
   color: white;
 }
 
+body div {
+  color: white;
+}
+
 body h1 {
   display: flex;
   font-weight: bold;
@@ -32,4 +36,12 @@ h4 {
 .center {
   display: flex;
   margin: auto;
+}
+
+.Lorem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
 }

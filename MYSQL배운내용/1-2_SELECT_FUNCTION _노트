@@ -338,6 +338,7 @@
     CASE WHEN 조건식 2 THEN 결과값 2    
     ....
     ELSE 결과값 N 
+    END
 */
 
 /*

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>채팅 기능</title>
+        <style>
+            body { font-family: Arial, sans-serif; }
+            #chat { border: 1px solid #ccc; padding: 10px; height: 300px; overflow-y: scroll; }
+            #message { width: 80%; }
+            #send { width: 18%; }
+        </style>
+    </head>
+    <body>
+        <h1>채팅 기능</h1>
+        <div id="chat"></div>
+        <input type="text" id="message" placeholder="메시지를 입력하세요..." />
+        <button id="send">전송</button>
+  
+        <script>
+            const chat = document.getElementById('chat');
+            const messageInput = document.getElementById('message');
+            const sendButton = document.getElementById('send');
+  
+            sendButton.addEventListener('click', () => {
+                const message = messageInput.value;
+                if (message) {
+                    const messageElement = document.createElement('div');
+                    messageElement.textContent = `나: ${message}`;
+                    chat.appendChild(messageElement);
+                    messageInput.value = '';
+                    chat.scrollTop = chat.scrollHeight; // 스크롤을 아래로
+                }
+            });
+  
+            // Enter 키로 전송
+            messageInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    sendButton.click();
+                }
+            });
+        </script>
+    </body>
+    </html>
+</body>
+</html>

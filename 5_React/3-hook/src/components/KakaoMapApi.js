@@ -2,28 +2,57 @@ import React, { useEffect } from "react";
 
 const KakaoMapApi = () => {
   useEffect(() => {
-    // Kakao 지도 API를 로드합니다.
     const script = document.createElement("script");
     script.src =
-      "//dapi.kakao.com/v2/maps/sdk.js?appkey=026b00a146f92fb6c993f2709b36eee0&autoload=false";
+      "//dapi.kakao.com/v2/maps/sdk.js?appkey=YOUR_APP_KEY&autoload=false";
     script.async = true;
     document.body.appendChild(script);
 
     script.onload = () => {
-      // Kakao 지도 API가 로드된 후에 실행
-      const { kakao } = window; // 구조 분해 할당
+      const { kakao } = window;
 
       kakao.maps.load(() => {
         const container = document.getElementById("map");
         const options = {
-          center: new kakao.maps.LatLng(33.450701, 126.570667),
+          center: new kakao.maps.LatLng(37.499, 127.03291),
           level: 3,
         };
-        new kakao.maps.Map(container, options);
+
+        const map = new kakao.maps.Map(container, options);
+
+        // 사용자 정의 마커 이미지 설정
+        const imageSrc = "URL_TO_YOUR_CUSTOM_MARKER_IMAGE.png"; // 사용자 정의 마커 이미지 URL
+        const imageSize = new kakao.maps.Size(64, 69);
+        const markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+
+        // 마커 위치 설정
+        const markerPosition = new kakao.maps.LatLng(37.499, 127.03291);
+
+        // 마커 객체 생성
+        const marker = new kakao.maps.Marker({
+          position: markerPosition,
+          image: markerImage,
+        });
+
+        marker.setMap(map); // 지도에 마커 추가
+
+        // 사용자 정의 커서 설정
+        const cursorImage = "URL_TO_YOUR_CUSTOM_CURSOR_IMAGE.png"; // 사용자 정의 커서 이미지 URL
+        const cursorSize = new kakao.maps.Size(32, 32); // 커서 이미지 크기
+
+        // 마우스 이벤트를 통해 커서 변경
+        kakao.maps.event.addListener(map, "mousemove", (mouseEvent) => {
+          const cursor = new kakao.maps.Marker({
+            position: mouseEvent.latLng,
+            image: new kakao.maps.MarkerImage(cursorImage, cursorSize), // 사용자 정의 커서 이미지
+            map: map, // 지도에 표시
+          });
+          // 커서가 움직일 때마다 새로운 마커로 업데이트
+          cursor.setMap(map);
+        });
       });
     };
 
-    // 컴포넌트가 언마운트될 때 스크립트 제거
     return () => {
       document.body.removeChild(script);
     };

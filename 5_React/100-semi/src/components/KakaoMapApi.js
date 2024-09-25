@@ -20,8 +20,8 @@ const KakaoMapApi = () => {
       <KakaoMap // react-kakao-maps-sdk를 사용한 지도
         id="map"
         center={{
-          lat: 33.450701,
-          lng: 126.570667,
+          lat: 37.499,
+          lng: 127.03291,
         }}
         style={{
           width: "100%",
@@ -37,7 +37,7 @@ const KakaoMapApi = () => {
       >
         {/* 클릭한 위치에 마커 추가 */}
         <MapMarker
-          position={{ lat: 33.450701, lng: 126.570667 }} // 초기 마커 위치
+          position={{ lat: 37.499, lng: 127.03291 }} // 초기 마커 위치
         />
       </KakaoMap>
       <div

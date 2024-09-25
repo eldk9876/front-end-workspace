@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
-
-const KakaoMapApi = () => {
+import dog from "../assets/RunDog.jpg";
+const KakaoMapApiTest = () => {
   const cursorMarkerRef = useRef(null); // 커서 마커를 위한 ref
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const KakaoMapApi = () => {
         const map = new kakao.maps.Map(container, options);
 
         // 사용자 정의 마커 이미지 설정
-        const imageSrc = "달리는 강아지.jpg"; // 사용자 정의 마커 이미지 URL
+        const imageSrc = dog; // 사용자 정의 마커 이미지 URL
         const imageSize = new kakao.maps.Size(64, 69);
         const markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
 
@@ -60,7 +60,12 @@ const KakaoMapApi = () => {
     };
   }, []);
 
-  return <div id="map" style={{ width: "500px", height: "400px" }}></div>;
+  return (
+    <div
+      id="map"
+      style={{ width: "500px", height: "400px", border: "1px solid black" }}
+    ></div>
+  );
 };
 
-export default KakaoMapApi;
+export default KakaoMapApiTest;

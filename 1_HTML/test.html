@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gradient Sphere</title>
+    <style>
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="400" height="400"></canvas>
+    <script>
+      const canvas = document.getElementById("canvas");
+      const ctx = canvas.getContext("2d");
+
+      const centerX = canvas.width / 2;
+      const centerY = canvas.height / 2;
+      const radius = 100;
+
+      for (let y = -radius; y <= radius; y++) {
+        for (let x = -radius; x <= radius; x++) {
+          const distance = Math.sqrt(x * x + y * y);
+          if (distance <= radius) {
+            // 색상 및 알파 값 계산
+            const alpha = 1 - distance / radius;
+            ctx.fillStyle = `rgba(0, 0, 255, ${alpha})`; // 파란색
+            ctx.fillRect(centerX + x, centerY + y, 1, 1);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,18 +1,25 @@
-import { useEffect, useRef } from "react";
-import { Map } from "react-kakao-maps-sdk";
-import useKakaoLoader from "./useKakaoLoader";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Map as KakaoMap, MapMarker } from "react-kakao-maps-sdk";
 
 const KakaoMapApi = () => {
-  useKakaoLoader();
+  const mapRef = useRef(null);
   const [result, setResult] = useState("");
+
+  const options = {
+    center: new window.kakao.maps.LatLng(33.450701, 126.570667),
+    level: 3,
+  };
+
+  useEffect(() => {
+    // 카카오 지도 API를 사용하여 지도 초기화
+    const map = new window.kakao.maps.Map(mapRef.current, options);
+  }, []);
 
   return (
     <>
-      <Map // 지도를 표시할 Container
+      <KakaoMap // react-kakao-maps-sdk를 사용한 지도
         id="map"
         center={{
-          // 지도의 중심좌표
           lat: 33.450701,
           lng: 126.570667,
         }}
@@ -27,7 +34,17 @@ const KakaoMapApi = () => {
             `클릭한 위치의 위도는 ${latlng.getLat()} 이고, 경도는 ${latlng.getLng()} 입니다`
           );
         }}
-      />
+      >
+        {/* 클릭한 위치에 마커 추가 */}
+        <MapMarker
+          position={{ lat: 33.450701, lng: 126.570667 }} // 초기 마커 위치
+        />
+      </KakaoMap>
+      <div
+        id="map"
+        ref={mapRef}
+        style={{ width: "500px", height: "400px", display: "none" }} // 숨김 처리
+      ></div>
       <p>
         <em>지도를 클릭해주세요!</em>
       </p>
@@ -36,25 +53,4 @@ const KakaoMapApi = () => {
   );
 };
 
-/*
-const KakaoMapApi = () => {
-  const mapRef = useRef(null);
-
-  var options = {
-    center: new window.kakao.maps.LatLng(33.450701, 126.570667),
-    level: 3,
-  };
-
-  useEffect(() => {
-    var map = new window.kakao.maps.Map(mapRef.current, options);
-  }, []);
-
-  return (
-    <div
-      id="map"
-      ref={mapRef}
-      style={{ width: "500px", height: "400px" }}
-    ></div>
-  );
-};*/
 export default KakaoMapApi;

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import dog from "../assets/RunDog.jpg";
+import cor from "../assets/cor.png";
 const KakaoMapApiTest = () => {
   const cursorMarkerRef = useRef(null); // 커서 마커를 위한 ref
 
@@ -39,7 +40,7 @@ const KakaoMapApiTest = () => {
         marker.setMap(map); // 지도에 마커 추가
 
         // 사용자 정의 커서 설정
-        const cursorImage = "test1.png"; // 사용자 정의 커서 이미지 URL
+        const cursorImage = cor; // 사용자 정의 커서 이미지 URL
         const cursorSize = new kakao.maps.Size(32, 32); // 커서 이미지 크기
 
         // 커서 마커 생성

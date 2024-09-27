@@ -22,5 +22,10 @@ export const getAwait = async () => {
 // JSON 데이터 자동으로 파싱
 
 export const getAxios = async () => {
-  const response = await axios.get();
+  try {
+    const response = await axios.get("http://localhost:8080/api/movie");
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
 };

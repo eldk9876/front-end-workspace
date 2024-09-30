@@ -1,6 +1,9 @@
 import MouseCursor from "./components/MouseCursor";
-import KakaoMapApi from "./components/KakaoMapApi";
-// import KakaoMapApiTest from "./components/KakaoMapApiTest";
+
+//import KakaoMapApi from "./components/KakaoMapApi";
+
+import KakaoMapApiTest from "./components/KakaoMapApiTest";
+
 const App = () => {
   return (
     <>
@@ -10,7 +13,7 @@ const App = () => {
       </div>
       <div>
         <h1>2.Kakao Map Example</h1>
-        <KakaoMapApi />
+        <KakaoMapApiTest />
       </div>
       <div>
         <h1>3.Kakao Map Example TEST</h1>

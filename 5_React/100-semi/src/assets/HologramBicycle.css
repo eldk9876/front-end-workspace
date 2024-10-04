@@ -5,15 +5,15 @@ body {
   align-items: center;
 }
 
-.hologram-container {
+.hologram-bicycle-container {
   position: relative;
-  width: 200px; /* 자동차의 너비 */
-  height: 100px; /* 자동차의 높이 */
+  width: 200px; /* 자전거의 너비 */
+  height: 100px; /* 자전거의 높이 */
   perspective: 1000px; /* 홀로그램 효과를 위한 원근감 */
 }
 
-.car-hologram {
-  background-image: url("car.png"); /* 자동차 이미지 경로 */
+.bicycle-hologram {
+  background-image: url("E_SPADES.png"); /* 자전거 이미지 경로 */
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;

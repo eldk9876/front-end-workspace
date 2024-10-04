@@ -3,7 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { CycleRaycast, OrbitControls } from "@react-three/drei";
 import { RoundedBox } from "three-stdlib";
 
-const Car = () => {
+const Texi = () => {
   return (
     <mesh position={[0, 0, 0]}>
       {/* 차체 밑동 */}
@@ -42,15 +42,15 @@ const Car = () => {
   );
 };
 
-const HologramTest = () => {
+const HologramTexi = () => {
   return (
     <Canvas style={{ background: "white", height: "100vh" }}>
       <ambientLight intensity={0.5} />
       <pointLight position={[10, 10, 10]} />
-      <Car />
+      <Texi />
       <OrbitControls />
     </Canvas>
   );
 };
 
-export default HologramTest;
+export default HologramTexi;

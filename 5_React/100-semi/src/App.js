@@ -4,8 +4,9 @@ import MouseCursor from "./components/MouseCursor";
 
 import KakaoMapApiTest from "./components/KakaoMapApiTest";
 
-import Hologram from "./components/Hologram"; // Hologram 컴포넌트를 임포트합니다.
-import HologramTest from "./components/HologramTest";
+import HologramCar from "./components/HologramCar"; // Hologram 컴포넌트를 임포트합니다.
+
+import HologramBicycle from "./components/HologramBicycle";
 
 const App = () => {
   return (
@@ -18,15 +19,19 @@ const App = () => {
         <h1>2.Kakao Map Example</h1>
         <KakaoMapApiTest />
       </div>
-      <div>
+      <div style={{ marginRight: "100px" }}>
         <h1>3.Kakao Map Example TEST</h1>
-        <Hologram />
+        <HologramCar />
+      </div>
+      <div style={{ margin: "20px" }}>
+        <HologramBicycle />
         {/* <KakaoMapApiTest /> */}
       </div>
-      <div style={{ height: "100vh" }}>
-        <h1>4.HologramTest</h1>
-        <HologramTest />
-      </div>
+
+      {/* <div style={{ height: "100vh" }}>
+        <h1>4.HologramTexi</h1>
+        <HologramTexi />
+      </div> */}
     </>
   );
 };

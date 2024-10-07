@@ -8,6 +8,8 @@ import HologramCar from "./components/HologramCar"; // Hologram 컴포넌트를 
 
 import HologramBicycle from "./components/HologramBicycle";
 
+import RoadviewGame from "./RoadviewGame";
+
 const App = () => {
   return (
     <>
@@ -27,8 +29,12 @@ const App = () => {
         <HologramBicycle />
         {/* <KakaoMapApiTest /> */}
       </div>
+      {/* <div className={"app"} style={{ margin: "20px" }}>
+        <h1>5.Test</h1>
+        <RoadviewGame />
+      </div> */}
 
-      {/* <div style={{ height: "100vh" }}>
+      {/* <div   style={{ height: "100vh" }}>
         <h1>4.HologramTexi</h1>
         <HologramTexi />
       </div> */}

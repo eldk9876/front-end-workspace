@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react"; // React의 useEffect와 us
 import dog from "../assets/RunDog.jpg"; // 마커 이미지로 사용할 이미지 파일 import
 import cor from "../assets/cor.png"; // 사용자 정의 커서 이미지 파일 import
 import "../assets/dongdong.css";
+import "../assets/style.css";
 
 import { Map as KakaoMap, MapMarker } from "react-kakao-maps-sdk";
 

@@ -1,22 +1,35 @@
-import { FaHouse } from "react-icons/fa6";
+import { IoLogInSharp } from "react-icons/io5";
 import { CiFolderOn } from "react-icons/ci";
-import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import "../assets/css/header.css";
 
-const Main = () => {
+const Header = () => {
+  const navigate = useNavigate();
+
+  const login = () => {
+    navigate("/login");
+  };
+
   return (
-    <main>
-      <aside>
-        <a href="">
-          {" "}
-          <FaHouse /> <span>홈</span>
-        </a>{" "}
-        <a href="">
-          {" "}
+    <main className="img">
+      <div className="main">
+        <div className="header_left">
+          <div className="menu">
+            <IoLogInSharp /> <span>로그인</span>
+            <button onClick={login}> 로그인입니다 !!!!!</button>
+          </div>
+        </div>
+        <div>
+          <h1 className="LOGO">미정</h1>
+        </div>
+        <div className="header_right">
           <CiFolderOn /> <span>저장</span>
-        </a>
-      </aside>
+        </div>
+      </div>
+      <Outlet />
     </main>
   );
 };
 
-export default Main;
+export default Header;

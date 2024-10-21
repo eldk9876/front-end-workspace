@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from "react"; // React의 useEffect와 useRef 훅을 import
-import dog from "../assets/RunDog.jpg"; // 마커 이미지로 사용할 이미지 파일 import
-import cor from "../assets/cor.png"; // 사용자 정의 커서 이미지 파일 import
-import "../assets/dongdong.css";
-import "../assets/style.css";
+import dog from "../assets/img/RunDog.jpg"; // 마커 이미지로 사용할 이미지 파일 import
+import cor from "../assets/img/cor.png"; // 사용자 정의 커서 이미지 파일 import
+import "../assets/css/dongdong.css";
+import "../assets/css/style.css";
 
 import { Map as KakaoMap, MapMarker } from "react-kakao-maps-sdk";
 
@@ -13,9 +13,10 @@ const KakaoMapApiTest = () => {
   const cursorMarkerRef = useRef(null); // 커서 마커를 참조하기 위한 ref 생성
   const mapWalkerRef = useRef(null); // map walker 아이콘을 참조하기 위한 ref 생성
 
+  const { kakao } = window; // 전역 객체 window에서 kakao 객체를 가져옴 (카카오 지도 API)
+
   useEffect(() => {
     // useEffect를 사용하여 컴포넌트가 처음 렌더링될 때 한 번 실행
-    const { kakao } = window; // 전역 객체 window에서 kakao 객체를 가져옴 (카카오 지도 API)
 
     // 지도 옵션 설정: 지도의 중심 좌표 및 기본 옵션 지정
     const mapCenter = new kakao.maps.LatLng(37.499, 127.03291);
@@ -179,7 +180,51 @@ const KakaoMapApiTest = () => {
         map.setCenter(position); // 지도의 중심을 로드뷰 위치로 설정
       });
     });
+    loadQuestion();
   }, []); // 빈 배열을 전달하여 컴포넌트가 처음 마운트될 때 한 번만 실행
+
+  const street = () => {
+    // StreetViewPanorama를 위한 별도 컨테이너 생성
+    const streetViewContainer = document.getElementById("street");
+    const streetView = new kakao.maps.StreetViewPanorama(streetViewContainer, {
+      pov: {
+        heading: 165,
+        pitch: 0,
+      },
+      zoom: 1,
+    });
+  };
+
+  // 이동할 곳
+  const loadQuestion = () => {
+    const questionElement = document.getElementById("question");
+    const optionsElement = document.getElementById("options");
+
+    const question = "여기서 어느 곳으로 갈까요?";
+    const options = [
+      "역삼휘트니스",
+      "미소병원",
+      "세븐일레븐역삼은탑점",
+      "(주)유니윌부설아이씨티연구소",
+    ];
+
+    questionElement.innerText = question;
+    optionsElement.innerHTML = "";
+
+    options.forEach((option) => {
+      const div = document.createElement("div");
+      div.className = "option";
+      div.innerText = option;
+      div.onclick = () => selectOption(option);
+      optionsElement.appendChild(div);
+    });
+  };
+
+  const selectOption = (option) => {
+    alert(`당신이 선택한 것은: ${option}`);
+
+    // 추가 로직? 눌렀을때 그곳으로 지도와 거리뷰 이동
+  };
 
   return (
     <>
@@ -195,6 +240,8 @@ const KakaoMapApiTest = () => {
         ref={roadviewRef}
         style={{ width: "500px", height: "500px" }} // 로드뷰 크기 설정
       ></div>
+      <div id="question" style={{ marginTop: "20px", fontSize: "24px" }}></div>
+      <div id="options"></div>
     </>
   );
 };

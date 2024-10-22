@@ -4,8 +4,8 @@ const instance = axios.create({
   baseURL: "http://localhost:8080/api/member/",
 });
 
-export const signup = async (data) => {
-  return await instance.post("signup", data);
+export const signup = async (formData) => {
+  return await instance.post("signup", formData);
 };
 
 export const login = async (data) => {

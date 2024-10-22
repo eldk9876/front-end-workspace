@@ -16,26 +16,27 @@ const Signup = () => {
     age: "",
     gender: "",
     nickname: "",
-    memberImg: "",
+    file: null, // 파일 초기값을 null로 설정
     memberInfo: "",
   });
+
   // 회원가입
   const submit = async () => {
-    const result = await signup(member);
+    const formData = new FormData();
+    Object.datas(member).forEach((data) => {
+      formData.append(data, member[data]);
+    });
+
+    const result = await signup(formData);
     if (result.status === 200) {
       alert("회원가입 성공!");
       navigate("/login");
     }
   };
 
-  const cansel = () => {
+  const cancel = () => {
     navigate("/");
   };
-
-  // const gender = () => {
-  //   if ((label = "남")) {
-  //   }
-  // };
 
   useEffect(() => {
     console.log(member);
@@ -94,14 +95,13 @@ const Signup = () => {
               id={button.btnMan}
               type="button"
               value={"남"}
-              onClick={(e) => setMember({ ...member, gender: e.target.value })}
+              onClick={() => setMember({ ...member, gender: "남" })} // 수정
             />
-
             <Input
               id={button.btnWomon}
               type="button"
               value={"여"}
-              onClick={(e) => setMember({ ...member, gender: e.target.value })}
+              onClick={() => setMember({ ...member, gender: "여" })} // 수정
             />
           </div>
           <Input
@@ -114,11 +114,11 @@ const Signup = () => {
           <Input
             label="유저 프로필 사진 : "
             type="file"
-            placeholder="프로필 사진이 변경가능합니다"
-            value={member.memberImg}
-            onChange={(e) =>
-              setMember({ ...member, memberImg: e.target.value })
-            }
+            onChange={(e) => {
+              const file = e.target.files[0];
+              console.log(file); // 파일 정보 출력
+              setMember({ ...member, file: file });
+            }}
           />
           <Input
             label="자기소개 : "
@@ -137,7 +137,7 @@ const Signup = () => {
             회원가입
           </button>
 
-          <button type="button" onClick={cansel}>
+          <button type="button" onClick={cancel}>
             회원가입 취소
           </button>
         </div>

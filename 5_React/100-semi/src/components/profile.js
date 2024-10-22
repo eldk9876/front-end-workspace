@@ -1,4 +1,9 @@
 import { useState } from "react";
+import "../assets/img/아기새0.jpg";
+import "../assets/img/아기새1.jpg";
+import "../assets/img/아기새2.jpg";
+import "../assets/img/아기새3.jpg";
+import "../assets/img/아기새4.jpg";
 
 const profile = async () => {
   const [picture, setPicture] = useState({

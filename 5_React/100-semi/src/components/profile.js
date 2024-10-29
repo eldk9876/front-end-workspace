@@ -13,11 +13,6 @@ const profile = async () => {
 
 if (!isOpen) return null;
 
-const upload = async () => {
-  const formData = new FormData();
-  formData.append("memberImg", member.memberImg);
-};
-
 const response = await AdditiveAnimationBlendMode(formData);
 
 console.log(response.data);

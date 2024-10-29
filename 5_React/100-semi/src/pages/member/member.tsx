@@ -1,0 +1,3 @@
+interface file {
+  file: file;
+}

@@ -13,7 +13,7 @@ const Signup = () => {
     phone: "",
     email: "",
     name: "",
-    age: "",
+    age: 0, // 기본 0
     gender: "",
     nickname: "",
     file: null, // 파일 초기값을 null로 설정
@@ -23,11 +23,27 @@ const Signup = () => {
   // 회원가입
   const submit = async () => {
     const formData = new FormData();
-    Object.datas(member).forEach((data) => {
-      formData.append(data, member[data]);
-    });
+    formData.append("id", member.id);
+    formData.append("password", member.password);
+    formData.append("phone", member.phone);
+    formData.append("email", member.email);
+    formData.append("name", member.name);
+    formData.append("age", member.age);
+    formData.append("gender", member.gender);
+    formData.append("nickname", member.nickname);
+    if (member.file != null) {
+      formData.append("file", member.file);
+    }
 
-    const result = await signup(formData);
+    formData.append("memberInfo", member.memberInfo);
+
+    // Object.keys(member).forEach((key) => {
+    //   formData.append(key, member[key]);
+    // });
+
+    const result = await signup(formData); //<-
+    console.log("1 : " + formData);
+    console.log("3 : " + result);
     if (result.status === 200) {
       alert("회원가입 성공!");
       navigate("/login");

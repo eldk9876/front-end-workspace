@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import Input from "../../components/Input";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { login } from "../../api/member";
 import { useAuth } from "../../contexts/AuthContext";
 import "../../assets/css/login.css";
@@ -12,18 +12,23 @@ const Login = () => {
     id: "",
     password: "",
   });
+
   const submit = async () => {
     const result = await login(member);
     try {
       if (result.status === 200) {
         authLogin(result.data);
+        console.log(authLogin + "아이디 받아오기");
         alert("로그인 성공!");
-        window.location.href = "/";
+        navigate("/");
       }
     } catch {
       alert("로그인 실패!");
     }
   };
+
+  console.log(localStorage.getItem("id"));
+
   const signup = () => {
     navigate("/signup");
   };
@@ -41,14 +46,14 @@ const Login = () => {
             type="text"
             placeholder="아이디를 입력해주세요"
             value={member.id}
-            change={(e) => setMember({ ...member, id: e.target.value })}
+            onChange={(e) => setMember({ ...member, id: e.target.value })}
           />
           <Input
             htmlFor="비밀번호 : "
             type="password"
             placeholder="비밀번호를 입력해주세요"
             value={member.password}
-            change={(e) => setMember({ ...member, password: e.target.value })}
+            onChange={(e) => setMember({ ...member, password: e.target.value })}
           />
           <button
             type="button"

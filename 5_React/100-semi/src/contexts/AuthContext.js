@@ -11,28 +11,24 @@ const AuthContext = createContext();
 // Provider를 통해 로그인 상태와 로그인/로그아웃 기능 제공
 
 export const AuthProvider = ({ children }) => {
-  // 로그인 상태 - token 유무
-  const [token, setToken] = useState(localStorage.getItem("token"));
+  // 로그인 상태
   const [id, setId] = useState(localStorage.getItem("id"));
 
-  // 로그인 기능:토큰 저장
-  const login = (token, id) => {
-    localStorage.setItem("token", token);
+  // 로그인 기능
+  const login = (id) => {
     localStorage.setItem("id", id);
-    setToken(token);
     setId(id);
   };
 
-  // 로그아웃 기능:토큰 삭제
+  // 로그아웃 기능
   const logout = () => {
-    localStorage.removeItem("token");
     localStorage.removeItem("id");
-    setToken(null);
+
     setId(null);
   };
 
   return (
-    <AuthContext.Provider value={{ id, token, login, logout }}>
+    <AuthContext.Provider value={{ id, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

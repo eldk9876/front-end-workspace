@@ -1,12 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
 // import Test from "./pages/Test";
-import KakaoMapApiTest from "./components/KakaoMapApiTest";
+// import KakaoMapApiTest from "./components/KakaoMapApiTest";
 // import Header from "./components/Header";
 import Main from "./pages/Main";
 import Login from "./pages/member/Login";
 import Signup from "./pages/member/Signup";
 import Layout from "./components/Layout";
 import MyPage from "./pages/member/Mypage";
+import UpDate from "./pages/member/UpDate";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
   {
     path: "/signup",
     element: <Signup />,
+  },
+  {
+    path: "/update",
+    element: <UpDate />,
   },
   // {
   //   path: "/kakaoMapApiTest",

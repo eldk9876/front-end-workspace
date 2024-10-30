@@ -15,8 +15,8 @@ export const AuthProvider = ({ children }) => {
   const [id, setId] = useState(localStorage.getItem("id"));
 
   // 로그인 기능
-  const login = (id) => {
-    localStorage.setItem("id", id);
+  const login = (data) => {
+    localStorage.setItem("id", data.id);
     setId(id);
   };
 

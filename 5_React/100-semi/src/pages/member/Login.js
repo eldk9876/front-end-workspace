@@ -15,19 +15,12 @@ const Login = () => {
 
   const submit = async () => {
     const result = await login(member);
-    try {
-      if (result.status === 200) {
-        authLogin(result.data);
-        console.log(authLogin + "아이디 받아오기");
-        alert("로그인 성공!");
-        navigate("/");
-      }
-    } catch {
-      alert("로그인 실패!");
+    if (result != null) {
+      authLogin(result.data);
+      alert("로그인 성공!");
+      navigate("/");
     }
   };
-
-  console.log(localStorage.getItem("id"));
 
   const signup = () => {
     navigate("/signup");

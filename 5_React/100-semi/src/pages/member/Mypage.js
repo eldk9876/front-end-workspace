@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useOutletContext } from "react-router-dom";
-import { Ifmation } from "../../api/member";
+import { IFMation, updateMember } from "../../api/member";
 
 export const Mypage = () => {
   const navigate = useNavigate();
@@ -10,19 +10,29 @@ export const Mypage = () => {
   const [ifmation, setIfmation] = useState([]);
 
   const ifmationAPI = async (data) => {
-    const result = await Ifmation();
-    console.log(result + "이거 뭐여 1");
-
+    const result = await IFMation(data);
     setIfmation(result.data);
-    console.log(data + "이거 뭐여 2");
+    // console.log(data, "이거 뭐여 2");
   };
 
   useEffect(() => {
     ifmationAPI();
   }, []);
 
+  // useEffect(() => {
+  //   console.log(ifmation);
+  // }, [ifmation]);
+
   const cansel = () => {
     navigate("/");
+  };
+
+  const UpDate = () => {
+    navigate("/UpDate");
+  };
+
+  const Delete = () => {
+    navigate("/Delete");
   };
 
   return (
@@ -36,11 +46,15 @@ export const Mypage = () => {
         <div> 3. 진행한 프로젝트에 대해 말해주세요 </div>
         <div> 4. SI, SM, 솔루션의 차이에 대해 말해주세요 </div>
         <button> SI </button>
-        <tbody>
-          {ifmation.map((member) => (
-            <tr key={member.no}></tr>
-          ))}
-        </tbody>
+        <>
+          <h1>여기 정보 빼내기!!!!!!!!!!!!!!!</h1>
+
+          <div>
+            <img src={ifmation.file}></img>
+          </div>
+          <div>{ifmation.nickname}</div>
+          <div>{ifmation.memberInfo}</div>
+        </>
         <div>
           {" "}
           <h1> SI </h1>{" "}
@@ -104,7 +118,8 @@ export const Mypage = () => {
         하시는 분 ✅ 기획, 개발, 판매, 제품 개선까지 제품의 전체 생애 주기와
         함께 하고 싶으신 분
         <div> 5. 트러블슈팅의 정의와 진행경험, 느낀점(배운점) </div>
-        <button>수정</button>
+        <button onClick={UpDate}>수정</button>
+        <button onClick={Delete}>회원탈퇴</button>
         <button onClick={cansel}>취소</button>
       </div>
     </main>

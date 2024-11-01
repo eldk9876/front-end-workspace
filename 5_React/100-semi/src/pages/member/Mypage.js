@@ -50,10 +50,17 @@ export const Mypage = () => {
           <h1>여기 정보 빼내기!!!!!!!!!!!!!!!</h1>
 
           <div>
+            이 부분은 이미지 입니다
             <img src={ifmation.file}></img>
           </div>
-          <div>{ifmation.nickname}</div>
-          <div>{ifmation.memberInfo}</div>
+          <div>
+            이 부분은 닉네임 입니다
+            {ifmation.nickname}
+          </div>
+          <div>
+            이 부분은 자기 소개부분 입니다
+            {ifmation.memberInfo}
+          </div>
         </>
         <div>
           {" "}

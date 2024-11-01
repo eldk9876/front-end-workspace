@@ -41,10 +41,15 @@ export const login = async (data) => {
 
 // 회원 정보 업데이트
 export const updateMember = async (data) => {
+  console.log(data);
   try {
-    return await instance.put("uptate", data);
-  } catch {
-    new Error("UPDATE FAIL");
+    return await instance.put("update", data, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
+  } catch (error) {
+    console.log(error);
   }
 };
 

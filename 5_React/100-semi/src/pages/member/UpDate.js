@@ -2,10 +2,34 @@ import { updateMember } from "../../api/member";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Input from "../../components/Input";
+import button from "../../components/Button";
 
 const UpDate = () => {
   const navigate = useNavigate();
-  const [member, setMember] = useState();
+  const [member, setMember] = useState({
+    password: "",
+    phone: "",
+    email: "",
+    file: null, // 파일 초기값을 null로 설정
+    memberInfo: "",
+  });
+
+  // 정보 수정
+  const submit = async () => {
+    const formData = new FormData();
+    formData.append("password", member.password);
+    formData.append("phone", member.phone);
+    formData.append("email", member.email);
+
+    formData.append("file", member.file);
+
+    formData.append("memberInfo", member.memberInfo);
+
+    const result = await updateMember(formData);
+    alert("정보수정 완료");
+    // console.log(result);
+    // navigate("/mypage");
+  };
 
   // 취소해서 메인으로 돌아가기
   const cancel = () => {
@@ -21,13 +45,6 @@ const UpDate = () => {
       <div className="bg-white p-8 shadow-md max-w-md w-full">
         <h1 className="text-3xl font-bold text-center mb-8">내 정보</h1>
         <div>
-          <Input
-            label="아이디 : "
-            type="text"
-            placeholder="아이디를 입력해주세요"
-            value={member.id}
-            onChange={(e) => setMember({ ...member, id: e.target.value })}
-          />
           <Input
             label="비밀번호 : "
             type="password"
@@ -49,42 +66,7 @@ const UpDate = () => {
             value={member.email}
             onChange={(e) => setMember({ ...member, email: e.target.value })}
           />
-          <Input
-            label="이름 : "
-            type="text"
-            placeholder="이름을 수정해주세요"
-            value={member.name}
-            onChange={(e) => setMember({ ...member, name: e.target.value })}
-          />
-          <Input
-            label="나이 : "
-            type="number"
-            placeholder="나이를 수정해주세요"
-            value={member.age}
-            onChange={(e) => setMember({ ...member, age: e.target.value })}
-          />
-          <div>성별 :</div>
-          <div id="gender">
-            <Input
-              id={button.btnMan}
-              type="button"
-              value={"남"}
-              onClick={() => setMember({ ...member, gender: "남" })} // 수정
-            />
-            <Input
-              id={button.btnWomon}
-              type="button"
-              value={"여"}
-              onClick={() => setMember({ ...member, gender: "여" })} // 수정
-            />
-          </div>
-          <Input
-            label="닉네임 : "
-            type="text"
-            placeholder="닉네임을 수정해주세요"
-            value={member.nickname}
-            onChange={(e) => setMember({ ...member, nickname: e.target.value })}
-          />
+
           <Input
             label="유저 프로필 사진 : "
             type="file"

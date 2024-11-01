@@ -10,16 +10,15 @@ import { useAuth } from "../contexts/AuthContext";
 const Header = () => {
   // 실험용
   const a = useAuth();
-  console.log(a, "호에엥엑");
+  // console.log(a, "호에엥엑");
   const [num, setNum] = useState({
     id: "",
     pwd: "",
   });
-  const [loginCheck, setLoginCheck] = useState("");
+  const [loginCheck, setLoginCheck] = useState(null);
 
   // 아이디 체크용
   const [check, setCheck] = useState(false);
-  localStorage.getItem("id");
   const navigate = useNavigate();
 
   // 로그인
@@ -42,8 +41,10 @@ const Header = () => {
 
   // 시작
   useEffect(() => {
-    // const a = localStorage.getItem("id");
-    // setLoginCheck(a);
+    console.log(loginCheck);
+  }, [loginCheck]);
+  useEffect(() => {
+    setLoginCheck(localStorage.getItem("id"));
   }, []);
 
   // if(여기에 조건 !== unll) {

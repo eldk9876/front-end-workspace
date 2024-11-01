@@ -8,6 +8,7 @@ import Signup from "./pages/member/Signup";
 import Layout from "./components/Layout";
 import MyPage from "./pages/member/Mypage";
 import UpDate from "./pages/member/UpDate";
+import Delete from "./pages/member/Delete";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
   {
     path: "/update",
     element: <UpDate />,
+  },
+  {
+    path: "/delete",
+    element: <Delete />,
   },
   // {
   //   path: "/kakaoMapApiTest",

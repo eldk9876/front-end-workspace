@@ -26,6 +26,10 @@ const Login = () => {
     navigate("/signup");
   };
 
+  const index = () => {
+    navigate("/");
+  };
+
   const google = () => {
     window.location.href = "http://localhost:8080/oauth2/authorization/google";
   };
@@ -73,6 +77,8 @@ const Login = () => {
           >
             회원가입
           </button>
+
+          <button onClick={index}>가입취소 </button>
         </div>
       </div>
     </div>

@@ -28,7 +28,7 @@ const UpDate = () => {
     const result = await updateMember(formData);
     alert("정보수정 완료");
     // console.log(result);
-    // navigate("/mypage");
+    navigate("/mypage");
   };
 
   // 취소해서 메인으로 돌아가기

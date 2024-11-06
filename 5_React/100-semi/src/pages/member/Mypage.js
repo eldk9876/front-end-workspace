@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useOutletContext } from "react-router-dom";
 import { IFMation, updateMember } from "../../api/member";
+import "../../assets/css/writing.css";
 
 export const Mypage = () => {
   const navigate = useNavigate();
@@ -12,16 +13,16 @@ export const Mypage = () => {
   const ifmationAPI = async (data) => {
     const result = await IFMation(data);
     setIfmation(result.data);
-    // console.log(data, "이거 뭐여 2");
+    console.log(data, "이거 뭐여 2");
   };
 
   useEffect(() => {
     ifmationAPI();
   }, []);
 
-  // useEffect(() => {
-  //   console.log(ifmation);
-  // }, [ifmation]);
+  useEffect(() => {
+    console.log(ifmation, "여기 지금 어떻게 나오고 있는 중이야?????? ");
+  }, [ifmation]);
 
   const cansel = () => {
     navigate("/");
@@ -41,7 +42,6 @@ export const Mypage = () => {
         <h1>내 정보</h1>
         <h1>데이터 확인용</h1>
         <div> 1. 자기소개 해주세요</div>
-        <button> </button>
         <div> 2. 개발직에 지원하게 된 이유와 노력에 대해 말해주세요 </div>
         <div> 3. 진행한 프로젝트에 대해 말해주세요 </div>
         <div> 4. SI, SM, 솔루션의 차이에 대해 말해주세요 </div>
@@ -55,75 +55,260 @@ export const Mypage = () => {
           </div>
           <div>
             이 부분은 닉네임 입니다
-            {ifmation.nickname}
+            <h1>{ifmation.nickname}</h1>
           </div>
           <div>
             이 부분은 자기 소개부분 입니다
-            {ifmation.memberInfo}
+            <h1>{ifmation.memberInfo}</h1>
           </div>
         </>
         <div>
-          {" "}
-          <h1> SI </h1>{" "}
+          <h1>
+            {" "}
+            !!!!!!!!!!이 부분은 공부할때 자습용으로 적어두는
+            구간입니다!!!!!!!!!!!!
+          </h1>
         </div>
-        SI(System Integration)는 고객이 요청하는 ‘시스템’을 기획하는 단계부터
-        프로그래밍을 통한 개발과 구축 전반적인 과정을 담당합니다. ‘무에서 유를
-        창조한다’라고도 알려져있는데요, 기업이 요구하는 사항을 반영, 커스텀
-        개발하고 시스템 구축까지 진행합니다. SI 업무의 경우, 고객사의 다양한
-        환경에 맞게 프로그래밍 언어와 개발환경 등을 접하게 되어 폭넓은 경험을
-        얻을 수 있다는 장점이 있습니다. 반면, 업무가 프로젝트 단위로 진행되기
-        때문에 정해진 위치에서 작업을 하기보다, 출장을 가거나 고객사에 상주하며
-        작업하는 파견 근무를 하게 되는 경우가 잦을 수 있다는 약간의 애로사항도
-        있다는 점! SI업체에서 맡게 될 업무 요구사항 분석 – 고객의 요구 사항
-        수집합니다 분석/설계 – 요구 사항을 분석하고, 실제 개발이 가능한 형태로
-        설계합니다. 개발 – 분석/설계를 통해서 나온 자료를 기반으로 실제 프로그램
-        개발, 구축합니다. 테스트 – 구축된 프로그램 테스트하고 사용에 이상이
-        없도록 안정화하는 작업을 거칩니다. 검수 – 고객으로부터 최종 결과물을
-        확인받고, 이상 없이 구축되었음을 인증받습니다. -이런 개발자들에게
-        추천해요👍 ✅ 다양한 업무 환경에서 많은 경험을 해보고 싶은 분 ✅ 한
-        곳에서 일하기보다는 조금 더 자유롭게 다양한 환경에서 개발하고 싶다
-        하시는 분
         <div>
           {" "}
-          <h1> SM </h1>{" "}
+          <h1> java 기본 </h1>{" "}
         </div>
-        SM(System Maintenance)은 현재 운영 중인 시스템의 기능을 새로운 환경
-        변화에 적응되도록 변경 시키거나, 시스템 점검, 고장등을 수리하여
-        정상적으로 가동하도록 관리, 기술지원 업무를 담당합니다. 시스템을
-        사용하는 사람들이 시스템을 편리하고 안정적으로 사용할 수 있도록
-        시스템상의 오류를 수정하거나 구축된 프로그램의 기능을 변경이나 추가하여
-        지원하기도 해요! SM을 담당하고 있는 근무자는 금융, 방송, 공공기관 등 각
-        고객사 시스템에 특화된 IT 지식을 얻을 수 있답니다. 다만, 한 시스템을
-        오랜 기간 담당하는 경우가 많다 보니, 여러 분야의 다양한 지식과 경험을
-        하기엔 한계가 있을 수 있어요! SM업체에서 맡게 될 업무 오류 수정 – 시스템
-        오류나 작업 중 발생한 오류를 수정합니다. 기능 개선 – 기존 시스템에 부가
-        기능을 더하거나 불편 요소를 개선합니다 기능 추가 – 새로운 기능을 추가
-        개발하기도 합니다. 데이터 제공 – 사용자들이 요구하는 데이터를 DB에서
-        조회하여 제공합니다. 시스템 안정화 – 시스템이 다운되거나, 부하가 걸리지
-        않도록 안정화를 진행합니다. -이런 개발자들에게 추천해요👍 ✅ 한 분야에
-        특화된 찐 전문가가 되고 싶다! 하시는 분
+        <div className="writing">
+          1. 자바의 기본 구조 클래스와 객체: 자바는 객체지향 언어로, 모든
+          프로그램은 클래스를 통해 정의됩니다. 클래스는 객체를 생성하기 위한
+          청사진이며, 객체는 클래스의 인스턴스입니다. 메서드: 클래스 내부에서
+          특정 작업을 수행하는 함수. public static void main(String[] args)는
+          자바 애플리케이션의 시작점입니다.{" "}
+        </div>
+        <div className="writing">
+          2. 주요 자료형 기본 자료형 (Primitive Types): int: 정수형 double:
+          실수형 boolean: 논리형 (true/false) char: 문자형 참조 자료형: 배열,
+          클래스, 인터페이스 등 객체를 가리킵니다. 예를 들어 String도 참조
+          자료형입니다.{" "}
+        </div>
+        <div className="writing">
+          3. 객체지향 프로그래밍 (OOP) 기본 개념 캡슐화: 데이터를 보호하기 위해
+          클래스 내부의 필드를 private으로 선언하고, 외부 접근은 getter와 setter
+          메서드로 제한합니다. 상속: 기존 클래스의 기능을 확장하여 새로운
+          클래스를 정의하는 것 (extends 키워드 사용). 다형성: 같은 메서드가 서로
+          다른 클래스에서 다른 동작을 수행하도록 하는 것. 추상화: 중요한 정보만
+          남기고 세부 사항을 숨기는 과정입니다. abstract 키워드로 추상 클래스를
+          정의할 수 있습니다.
+        </div>
+        <div className="writing">
+          4. 자바의 메모리 관리 스택(Stack): 메서드 호출과 지역 변수가 저장되는
+          메모리 영역. 힙(Heap): 동적으로 생성된 객체가 저장되는 메모리 영역.
+          가비지 컬렉션 (Garbage Collection): 더 이상 참조되지 않는 객체를
+          자바가 자동으로 제거하여 메모리를 관리합니다.
+        </div>
+        <div className="writing">
+          5. 예외 처리 try-catch-finally: 예외 발생 가능성이 있는 코드를 try
+          블록에 두고, 예외가 발생하면 catch 블록으로 처리합니다. throws 키워드:
+          메서드가 예외를 던질 가능성이 있음을 선언합니다. throw: 특정 조건에서
+          직접 예외를 발생시킵니다.
+        </div>
+        <div className="writing">
+          6. 주요 클래스와 인터페이스 String: 불변(immutable) 객체로 문자열을
+          다룹니다. ArrayList, HashMap: 자바 컬렉션 프레임워크에서 리스트와 맵
+          구조를 다루는 클래스입니다. 인터페이스: 클래스가 특정 메서드를
+          구현하도록 강제하는 추상형으로, 다중 상속을 지원하는 역할도 합니다.
+        </div>
+        <div className="writing">
+          7. 기타 중요한 키워드 static: 클래스 수준에서 공유되는 필드나 메서드에
+          사용됩니다. final: 변경할 수 없는 상수나 클래스/메서드를 정의할 때
+          사용됩니다. this: 현재 객체를 참조하는 키워드. super: 부모 클래스의
+          멤버에 접근할 때 사용합니다.
+        </div>
         <div>
           {" "}
-          <h1> 솔루션 </h1>{" "}
+          <h1> JAVA의 기본 문법들과 키워드 </h1>{" "}
         </div>
-        솔루션은 자사가 직접 개발한 제품을 바탕으로, 고객에게 서비스를 제공하는
-        분야입니다. 저희 파수&스패로우도 ‘소프트웨어 솔루션’ 회사인데요. SI와
-        비슷한 특징을 가지고 있지만, SI가 아무것도 없는 상태에서 고객의 요구
-        사항을 기반으로 ‘무에서 유’를 창조한다면, 솔루션은 이미 완성된
-        프로그램(제품)을 기반으로 고객의 요구사항에 맞게 수정, 제공한다는 차이를
-        가지고 있어요. 일반적으로 제품 연구 개발 부분에 조금 더 특화되어
-        있는데요, SI와 SM 업무들을 고루 경험해 볼 수 있는 특징을 가집니다.
-        시장에서 살아남기 위해서는, 그만큼 경쟁력있는 제품을 개발해야 한다는
-        부담도 있답니다! 솔루션 업체에서 맡게 될 업무 솔루션 기획, 연구, 개발-
-        시장조사와 분석을 통해, 잠재고객들이 필요로 하는 제품을 기획, 설계,
-        연구, 개발합니다. 솔루션 오류 수정- 개발된 기능, 제품들의 오류를 확인,
-        수정하고 바로잡는 과정을 끊임없이 반복합니다. 솔루션 테스트, 검수-
-        완성된 솔루션이 실제 다양한 환경에서 이상 없이 작동되는지 테스트하고
-        검수합니다. 솔루션 기능 추가, 개선- 실제로 사용하는 고객들의 의견을
-        반영, 추가로 기능을 개발하거나, 제품을 개선합니다. -이런 개발자들에게
-        추천해요👍 ✅ 체계적인 개발과정을 거치며 차근차근 역량을 키우고 싶다
-        하시는 분 ✅ 기획, 개발, 판매, 제품 개선까지 제품의 전체 생애 주기와
-        함께 하고 싶으신 분
+        자바의 모든 키워드 자바는 총 50개의 키워드를 가지고 있습니다. 이들은
+        프로그램의 구조와 동작을 정의하는 데 사용됩니다. 키워드 설명 abstract
+        추상 클래스 또는 메서드를 정의할 때 사용 assert 조건을 검증하는 데 사용
+        boolean boolean 데이터 타입을 정의 break 반복문 또는 switch 문을 종료
+        byte byte 데이터 타입을 정의 case switch 문 내에서 사용 catch 예외를
+        처리하는 블록 char char 데이터 타입을 정의 class 클래스를 정의 const
+        예약어로 사용되지 않음 continue 반복문의 현재 반복을 건너뜀 default
+        switch 문에서 기본값을 지정 do do-while 반복문을 정의 double double
+        데이터 타입을 정의 else if 문과 함께 사용하여 조건을 설정 enum 열거형을
+        정의 extends 클래스를 상속할 때 사용 final 상수 또는 더 이상 변경할 수
+        없는 요소를 정의 finally 예외 처리 후 항상 실행되는 블록 float float
+        데이터 타입을 정의 for for 반복문을 정의 goto 예약어로 사용되지 않음 if
+        조건문을 정의 implements 인터페이스를 구현할 때 사용 import 다른
+        패키지의 클래스를 가져올 때 사용 instanceof 객체의 타입을 확인하는 데
+        사용 int int 데이터 타입을 정의 interface 인터페이스를 정의 long long
+        데이터 타입을 정의 native 자바 외부에서 정의된 메서드 new 객체를 생성할
+        때 사용 null null 값을 나타냄 package 클래스의 패키지를 정의 private
+        클래스 내에서만 접근 가능한 멤버 정의 protected 같은 패키지 또는
+        서브클래스에서 접근 가능 public 어디에서든 접근 가능한 멤버 정의 return
+        메서드에서 값을 반환할 때 사용 short short 데이터 타입을 정의 static
+        클래스 레벨에서 사용하는 멤버 정의 strictfp 부동 소수점 계산의 정확성을
+        유지 super 부모 클래스의 멤버에 접근 switch 여러 조건을 확인하는 데 사용
+        synchronized 멀티스레드 환경에서 동기화 this 현재 객체를 참조 throw
+        예외를 발생시킴 throws 메서드가 발생시킬 수 있는 예외를 선언 transient
+        직렬화 시 무시할 필드를 정의 try 예외 처리를 위한 블록 정의 void
+        반환값이 없는 메서드를 정의 volatile 멀티스레드에서 변수를 동기화하는 데
+        사용 주요 문법 요소 변수: 데이터를 저장하는 공간으로, 기본 타입과 참조
+        타입이 있습니다. 예: int age = 25;, String name = "John"; 연산자: 변수
+        간의 연산을 수행합니다.
+        {/* 산술 연산자: +, -, *, /, %
+비교 연산자: ==, !=, >, <, >=, <=
+논리 연산자: &&, ||, !
+조건문: 프로그램의 흐름을 제어합니다. */}
+        if, else, switch 반복문: 코드 블록을 반복 실행합니다. for, while,
+        do-while 메서드: 특정 작업을 수행하는 코드 블록입니다. java 코드 복사
+        {/* public int add(int a, int b) {
+    return a + b;
+} */}
+        클래스와 객체: 객체 지향 프로그래밍의 기본 요소입니다. 클래스 정의: java
+        코드 복사 public class Car{" "}
+        {
+          // 속성 및 메서드
+        }
+        객체 생성: java 코드 복사 Car myCar = new Car(); 예외 처리: 프로그램에서
+        발생하는 오류를 처리합니다. java 코드 복사 try{" "}
+        {
+          // 위험한 코드
+        }{" "}
+        catch (Exception e){" "}
+        {
+          // 예외 처리
+        }{" "}
+        finally{" "}
+        {
+          // 항상 실행되는 코드
+        }
+        배열: 같은 타입의 여러 변수를 저장하는 데이터 구조입니다. java 코드 복사
+        {/* int[] numbers = {1, 2, 3, 4, 5}; */}
+        컬렉션: 여러 개체를 저장하는 자료구조입니다. (예: List, Set, Map 등)
+        <div>
+          {" "}
+          <h1> 객체지향 </h1>{" "}
+        </div>
+        1. 캡슐화 (Encapsulation) 캡슐화는 객체의 상태와 동작을 하나로 묶고,
+        외부에서 객체 내부의 구현을 숨기는 개념입니다. 이를 통해 객체는 자기
+        자신의 데이터를 보호하고, 외부에서는 제공된 인터페이스(메서드)를
+        통해서만 접근할 수 있습니다. 자바스크립트에서 캡슐화를 구현하려면
+        private 키워드나 # 기호를 사용하여 클래스 필드나 메서드를 비공개로
+        설정할 수 있습니다.
+        {/* javascript
+코드 복사
+class BankAccount {
+    #balance = 0; // private 필드
+
+    constructor(initialBalance) {
+        this.#balance = initialBalance;
+    }
+
+    deposit(amount) {
+        if (amount > 0) this.#balance += amount;
+    }
+
+    getBalance() {
+        return this.#balance; // 외부에서 직접 balance에 접근할 수 없음
+    }
+}
+
+const account = new BankAccount(100);
+account.deposit(50);
+console.log(account.getBalance()); // 150
+console.log(account.#balance); // 에러 발생, 직접 접근 불가 */}
+        2. 상속 (Inheritance) 상속은 자식 클래스가 부모 클래스의 속성과 메서드를
+        물려받는 것을 의미합니다. 이를 통해 코드 재사용성을 높이고, 여러
+        클래스에서 공통적인 기능을 공유할 수 있습니다. 자바스크립트에서는
+        extends 키워드를 사용해 상속을 구현할 수 있습니다.
+        {/* javascript
+코드 복사
+class Animal {
+    speak() {
+        console.log("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    speak() {
+        console.log("Dog barks");
+    }
+}
+
+const myDog = new Dog();
+myDog.speak(); // "Dog barks" 출력 */}
+        3. 추상화 (Abstraction) 추상화는 객체의 복잡성을 숨기고, 필요한 부분만
+        노출하는 원칙입니다. 이를 통해 구현과 관련된 세부 사항을 숨기고, 객체의
+        중요한 속성이나 기능만을 보여줍니다. 자바스크립트에서는 직접적인 추상화
+        기능은 없지만, 상속을 사용하여 추상 클래스를 만들고 자식 클래스에서
+        구현하게 할 수 있습니다. 예를 들어, 인터페이스처럼 사용할 추상 클래스
+        Shape를 만들고, 각 도형이 해당 클래스를 상속받아 area() 메서드를
+        구현하도록 할 수 있습니다.
+        {/* // javascript
+// 코드 복사
+// class Shape {
+//     constructor(name) {
+//         this.name = name;
+//     }
+
+//     area() {
+//         throw new Error("Method 'area()' must be implemented.");
+//     }
+// }
+
+// class Circle extends Shape {
+//     constructor(radius) {
+//         super("Circle");
+//         this.radius = radius;
+//     }
+
+//     area() {
+//         return Math.PI * this.radius ** 2;
+//     }
+// }
+
+// const circle = new Circle(5);
+// console.log(circle.area()); // 78.53981633974483 */}
+        4. 모듈화 (Modularity) 모듈화는 코드를 독립적인 단위로 나누어 코드
+        재사용성과 유지보수성을 향상시키는 개념입니다. 자바스크립트에서는
+        export와 import 키워드를 사용하여 모듈을 만들고, 이를 필요에 따라 가져와
+        사용할 수 있습니다. 예를 들어, mathUtils.js라는 파일에서 다음과 같은
+        함수를 export한 후 다른 파일에서 import하여 사용할 수 있습니다.
+        {/* javascript
+코드 복사
+// mathUtils.js
+// export function add(a, b) {
+//     return a + b;
+// }
+
+// main.js
+// import { add } from './mathUtils.js';
+// console.log(add(3, 4)); // 7 */}
+        5. 의존성 주입 (Dependency Injection) 의존성 주입은 객체가 직접적으로
+        의존하는 것이 아니라 외부에서 필요한 객체를 주입 받는 방식입니다.
+        자바스크립트에서는 주로 함수나 클래스에 인자를 통해 주입하는 방식으로
+        사용되며, 코드의 유연성을 높이고 테스트를 쉽게 해줍니다.
+        {/* // javascript
+// 코드 복사
+// class Logger {
+//     log(message) {
+//         console.log("Log:", message);
+//     }
+// }
+
+// class UserService {
+//     constructor(logger) {
+//         this.logger = logger; // 의존성 주입
+//     }
+
+//     createUser(user) {
+//         this.logger.log("User created: " + user.name);
+//     }
+// }
+
+// const logger = new Logger();
+// const userService = new UserService(logger);
+// userService.createUser({ name: "Alice" }); */}
+        이러한 객체 지향 개념을 자바스크립트에서 활용하면 코드의 유연성과
+        재사용성이 크게 향상되어 더 효율적이고 유지보수하기 쉬운 프로그램을
+        작성할 수 있습니다.
         <div> 5. 트러블슈팅의 정의와 진행경험, 느낀점(배운점) </div>
         <button onClick={UpDate}>수정</button>
         <button onClick={Delete}>회원탈퇴</button>

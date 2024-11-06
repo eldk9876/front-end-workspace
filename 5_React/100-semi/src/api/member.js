@@ -54,10 +54,10 @@ export const updateMember = async (data) => {
 };
 
 // 회원 삭제
-export const removeMember = async (no) => {
+export const removeMember = async () => {
   try {
     localStorage.clear();
-    return await instance.delete(`delete/${no}`);
+    return await instance.delete(`delete`);
   } catch {
     new Error("DELETE FAIL");
   }
@@ -66,9 +66,9 @@ export const removeMember = async (no) => {
 // 마이페이지에 정보 보내기
 export const IFMation = async (data) => {
   try {
-    const a = await instance.post("mypage", data);
-    console.log("초비상" + a);
-    return a;
+    const IFM = await instance.post("mypage", data);
+    console.log("초비상" + IFM);
+    return IFM;
   } catch {
     new Error("MYPAGE FAIL");
   }

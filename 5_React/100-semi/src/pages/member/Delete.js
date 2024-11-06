@@ -4,15 +4,24 @@ import { useState, useEffect } from "react";
 
 const Delete = () => {
   const navigate = useNavigate();
+  const [usedelete, setUsedelete] = useState([]);
 
-  //   useEffect(() => {}, []);
+  const ifdelete = async () => {
+    const result = await removeMember();
+    setUsedelete(result.date);
+  };
+
+  useEffect(() => {
+    // const nickname();
+    ifdelete();
+  }, []);
 
   const ok = () => {
     navigate("/");
   };
 
-  const no = () => {
-    navigate("mypage");
+  const re = () => {
+    navigate("/mypage");
   };
 
   return (
@@ -22,7 +31,7 @@ const Delete = () => {
         <div>
           <span>
             <button onClick={ok}>확인</button>
-            <button onClick={no}>취소</button>
+            <button onClick={re}>취소</button>
           </span>
         </div>
       </main>

@@ -1,12 +1,108 @@
-.body {
+.divLoginMain {
+  background-image: url(../img/pc-배경.png);
+  background-position: center;
+
+  margin-bottom: 30px;
+
+  background-repeat: no-repeat;
+  background-size: 90%;
+
+  overflow: hidden;
+}
+
+.Z-indexTest {
+  background-image: url(../img/창밖책상2.jpg);
+  z-index: auto;
+  background-size: 100% auto; /* 가로만 두 배로 확장 */
+  background-position: center; /* 중심을 유지 */
+  background-repeat: no-repeat; /* 배열반복X */
+  overflow: hidden;
+}
+
+.divLoginBody {
+  background-image: url(../img/다운로드.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 49%;
+  overflow: hidden;
+  margin-left: 15px;
+  margin-bottom: 177px;
+  padding: 10%;
   display: flex;
-  text-align: left;
-  align-content: center;
+  align-items: center;
+
+  flex: content;
+  justify-content: center;
+  border-radius: 0%;
+}
+
+.divLogin {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.LoginLabel label {
+  font-size: 20px;
+}
+
+.LoginLabel input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 5px;
+  padding: 10px;
+  padding-right: 50%;
+  border-radius: 5px;
+}
+
+.h1-1 {
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.loginbutton {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.Sign {
+  display: flex;
+  justify-content: center;
+  font-weight: bolder;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.SignButton {
+  display: flex;
   justify-content: center;
   padding: 10px;
-  margin: 100px;
+}
 
-  border: 1px solid;
+.SignButton1 {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  margin-right: 100px;
+}
+.SignButton2 {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
 
-  background-color: silver;
+.h1-2 {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }

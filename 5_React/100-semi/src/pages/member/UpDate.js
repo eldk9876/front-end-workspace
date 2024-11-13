@@ -3,10 +3,13 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Input from "../../components/Input";
 import button from "../../components/Button";
+import { useAuth } from "../../contexts/AuthContext";
 
-const UpDate = () => {
+const Update = () => {
   const navigate = useNavigate();
+  const { no } = useAuth();
   const [member, setMember] = useState({
+    no: no,
     password: "",
     phone: "",
     email: "",
@@ -17,17 +20,16 @@ const UpDate = () => {
   // 정보 수정
   const submit = async () => {
     const formData = new FormData();
+    formData.append("no", member.no);
     formData.append("password", member.password);
     formData.append("phone", member.phone);
     formData.append("email", member.email);
-
-    formData.append("file", member.file);
-
+    formData.append("mfile", member.file);
     formData.append("memberInfo", member.memberInfo);
 
     const result = await updateMember(formData);
     alert("정보수정 완료");
-    // console.log(result);
+    console.log("업데이트 정보 수정 확인 클라이언트 !!!!!" + result);
     navigate("/mypage");
   };
 
@@ -37,7 +39,8 @@ const UpDate = () => {
   };
 
   useEffect(() => {
-    console.log(member);
+    console.log("업데이트의 유저임펙트 부분 확인 no : ", no);
+    console.log("업데이트의 유저임펙트 부분 확인 member : ", member);
   }, [member]);
 
   return (
@@ -102,4 +105,4 @@ const UpDate = () => {
   );
 };
 
-export default UpDate;
+export default Update;

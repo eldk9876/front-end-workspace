@@ -4,19 +4,19 @@ import { useState, useEffect } from "react";
 
 const Delete = () => {
   const navigate = useNavigate();
-  const [usedelete, setUsedelete] = useState([]);
+  const [userNo, setUserNo] = useState("");
 
   const ifdelete = async () => {
-    const result = await removeMember();
-    setUsedelete(result.date);
+    await removeMember(userNo);
   };
-
   useEffect(() => {
-    // const nickname();
-    ifdelete();
+    setUserNo(localStorage.getItem("no"));
   }, []);
 
-  const ok = () => {
+  const Delete = () => {
+    if (userNo) {
+      ifdelete();
+    }
     navigate("/");
   };
 
@@ -30,7 +30,7 @@ const Delete = () => {
         <h1>한번 더 생각해보세요. 정말 삭제하시겠습니까??? </h1>
         <div>
           <span>
-            <button onClick={ok}>확인</button>
+            <button onClick={Delete}>확인</button>
             <button onClick={re}>취소</button>
           </span>
         </div>

@@ -1,12 +1,50 @@
-.body {
+.divBody {
+  background-image: url(../img/지구test.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  overflow: hidden;
+  margin: 10%;
+  padding: 10%;
   display: flex;
-  text-align: left;
-  align-content: center;
-  justify-content: center;
-  padding: 10px;
-  margin: 100px;
-
+  align-items: center;
   border: 1px solid;
+  flex: content;
+  justify-content: center;
+  border-radius: 100%;
+}
 
-  background-color: skyblue;
+.h1-SignUp {
+  background-color: black;
+  color: white;
+  margin-bottom: 5px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+}
+
+.inPutTest label {
+  background-color: black;
+  color: white;
+}
+
+.inPutTest input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 5px;
+  padding: 2px;
+  padding-right: 50%;
+  border-radius: 5px;
+  font-weight: bold;
+  background-color: white;
+}
+
+.signupbutton {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
 }

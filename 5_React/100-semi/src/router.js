@@ -7,7 +7,7 @@ import Login from "./pages/member/Login";
 import Signup from "./pages/member/Signup";
 import Layout from "./components/Layout";
 import MyPage from "./pages/member/Mypage";
-import UpDate from "./pages/member/UpDate";
+import Update from "./pages/member/Update";
 import Delete from "./pages/member/Delete";
 
 const router = createBrowserRouter([
@@ -35,7 +35,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/update",
-    element: <UpDate />,
+    element: <Update />,
   },
   {
     path: "/delete",

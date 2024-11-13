@@ -3,22 +3,26 @@ import { useNavigate } from "react-router-dom";
 import { useOutletContext } from "react-router-dom";
 import { IFMation, updateMember } from "../../api/member";
 import "../../assets/css/writing.css";
+import { useAuth } from "../../contexts/AuthContext";
+import "../../assets/css/mypage.scss";
 
 export const Mypage = () => {
   const navigate = useNavigate();
+  // const { no } = useAuth();
   // const { member, setMember } = useOutletContext();
-
+  const [no, setId] = useState(localStorage.getItem("no"));
   const [ifmation, setIfmation] = useState([]);
 
   const ifmationAPI = async (data) => {
+    console.log(data, "이거 뭐여 1");
     const result = await IFMation(data);
+    console.log("이거 뭐여 3", result.data);
     setIfmation(result.data);
-    console.log(data, "이거 뭐여 2");
   };
 
   useEffect(() => {
-    ifmationAPI();
-  }, []);
+    ifmationAPI(no);
+  }, [no]);
 
   useEffect(() => {
     console.log(ifmation, "여기 지금 어떻게 나오고 있는 중이야?????? ");
@@ -32,16 +36,23 @@ export const Mypage = () => {
     navigate("/UpDate");
   };
 
-  const Delete = () => {
+  const DeletePage = () => {
     navigate("/Delete");
   };
 
   return (
-    <main className="MyPage">
+    <main className="MyPageMain">
       <div className="HeaderName">
-        <h1>내 정보</h1>
-        <h1>데이터 확인용</h1>
-        <div> 1. 자기소개 해주세요</div>
+        <h1 id="myIf">내 정보</h1>
+        <div className="imgFile">
+          <div id="Mypagenickname">
+            닉네임
+            <h1 className="MypagenicknameIf">{ifmation.nickname}</h1>
+          </div>
+          <div id="MypageProfileImg">프로필 이미지</div>
+          <img src={ifmation.file}></img>
+        </div>
+        <div> {ifmation.memberInfo}</div>
         <div> 2. 개발직에 지원하게 된 이유와 노력에 대해 말해주세요 </div>
         <div> 3. 진행한 프로젝트에 대해 말해주세요 </div>
         <div> 4. SI, SM, 솔루션의 차이에 대해 말해주세요 </div>
@@ -49,14 +60,6 @@ export const Mypage = () => {
         <>
           <h1>여기 정보 빼내기!!!!!!!!!!!!!!!</h1>
 
-          <div>
-            이 부분은 이미지 입니다
-            <img src={ifmation.file}></img>
-          </div>
-          <div>
-            이 부분은 닉네임 입니다
-            <h1>{ifmation.nickname}</h1>
-          </div>
           <div>
             이 부분은 자기 소개부분 입니다
             <h1>{ifmation.memberInfo}</h1>
@@ -311,7 +314,7 @@ myDog.speak(); // "Dog barks" 출력 */}
         작성할 수 있습니다.
         <div> 5. 트러블슈팅의 정의와 진행경험, 느낀점(배운점) </div>
         <button onClick={UpDate}>수정</button>
-        <button onClick={Delete}>회원탈퇴</button>
+        <button onClick={DeletePage}>회원탈퇴</button>
         <button onClick={cansel}>취소</button>
       </div>
     </main>

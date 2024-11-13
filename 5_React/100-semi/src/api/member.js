@@ -5,9 +5,9 @@ const instance = axios.create({
 });
 
 // 'multipart/form-data'로 요청 보내기
-export const signup = async (formData) => {
-  console.log("2 : " + formData);
-  return await instance.put("/signup", formData, {
+export const signup = async (Data) => {
+  console.log("1 회원 가입 부분 : ", Data);
+  return await instance.post("/signup", Data, {
     // <-
     headers: {
       "Content-Type": "multipart/form-data", // Content-Type을 multipart/form-data로 설정
@@ -31,9 +31,10 @@ export const signup = async (formData) => {
 
 // 로그인
 export const login = async (data) => {
+  console.log("2 로그인  부분 : ", data);
   try {
-    const a = await instance.post("login", data);
-    return a;
+    const useLogin = await instance.post("/login", data);
+    return useLogin;
   } catch {
     alert("로그인 실패!");
   }
@@ -41,9 +42,8 @@ export const login = async (data) => {
 
 // 회원 정보 업데이트
 export const updateMember = async (data) => {
-  console.log(data);
   try {
-    return await instance.put("update", data, {
+    return await instance.put("/update", data, {
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -54,22 +54,30 @@ export const updateMember = async (data) => {
 };
 
 // 회원 삭제
-export const removeMember = async () => {
+export const removeMember = async (data) => {
   try {
+    console.log("히히발사");
     localStorage.clear();
-    return await instance.delete(`delete`);
+    return await instance.delete("/delete/" + data);
   } catch {
     new Error("DELETE FAIL");
   }
 };
 
 // 마이페이지에 정보 보내기
+// export const IFMation = async (data) => {
+//   console.log("2 마이페이지 정보 보내는 부분 : ", data);
+//   try {
+//     const IFM = await instance.get("mypage/", data);
+//     console.log("초비상 가능????" + IFM);
+//     return IFM;
+//   } catch {
+//     new Error("MYPAGE FAIL");
+//   }
+// };
+
 export const IFMation = async (data) => {
-  try {
-    const IFM = await instance.post("mypage", data);
-    console.log("초비상" + IFM);
-    return IFM;
-  } catch {
-    new Error("MYPAGE FAIL");
-  }
+  console.log("2 마이페이지 정보 보내는 부분 : ", data);
+  // return await instance.get("mypage/" + data);
+  return await instance.get(`mypage/${data}`);
 };

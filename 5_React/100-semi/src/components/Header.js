@@ -9,9 +9,10 @@ import { useAuth } from "../contexts/AuthContext";
 
 const Header = () => {
   // 실험용
-  const a = useAuth();
-  // console.log(a, "호에엥엑");
+  const { no } = useAuth();
+  console.log(no, "호에엥엑");
   const [num, setNum] = useState({
+    no: "",
     id: "",
     pwd: "",
   });
@@ -22,6 +23,7 @@ const Header = () => {
   const navigate = useNavigate();
 
   // 로그인
+
   const login = () => {
     navigate("/login");
   };
@@ -29,7 +31,7 @@ const Header = () => {
   //로그아웃
 
   const logout = () => {
-    localStorage.removeItem("id");
+    localStorage.removeItem("no");
     setLoginCheck(null);
     // AuthProvider.logout();
   };
@@ -41,10 +43,10 @@ const Header = () => {
 
   // 시작
   useEffect(() => {
-    console.log(loginCheck);
+    console.log("시작 로그인 정보 잘 받아왔나???", loginCheck);
   }, [loginCheck]);
   useEffect(() => {
-    setLoginCheck(localStorage.getItem("id"));
+    setLoginCheck(localStorage.getItem("no"));
   }, []);
 
   // if(여기에 조건 !== unll) {

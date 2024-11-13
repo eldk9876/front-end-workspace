@@ -32,18 +32,16 @@ const Signup = () => {
     formData.append("gender", member.gender);
     formData.append("nickname", member.nickname);
     if (member.file != null) {
-      formData.append("file", member.file);
+      formData.append("mfile", member.file);
     }
 
     formData.append("memberInfo", member.memberInfo);
 
-    // Object.keys(member).forEach((key) => {
-    //   formData.append(key, member[key]);
-    // });
-
     const result = await signup(formData); //<-
     if (result.status === 200) {
-      alert("회원가입 성공!");
+      alert(
+        "회원가입 성공! 아이디와 닉네임은 변경 불가능 하오니 쾌적한 인터넷문화 부탁드립니다!!"
+      );
       navigate("/login");
     }
   };
@@ -57,10 +55,10 @@ const Signup = () => {
   }, [member]);
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="divBody">
       <div className="bg-white p-8 shadow-md max-w-md w-full">
-        <h1 className="text-3xl font-bold text-center mb-8">회원가입</h1>
-        <div>
+        <h1 className="h1-SignUp">회원가입</h1>
+        <div className="inPutTest">
           <Input
             label="아이디 : "
             type="text"
@@ -103,9 +101,9 @@ const Signup = () => {
             value={member.age}
             onChange={(e) => setMember({ ...member, age: e.target.value })}
           />
-          <div>성별 :</div>
           <div id="gender">
             <Input
+              label="성별 : "
               id={button.btnMan}
               type="button"
               value={"남"}
@@ -143,17 +141,15 @@ const Signup = () => {
               setMember({ ...member, memberInfo: e.target.value })
             }
           />
-          <button
-            type="button"
-            className="bg-black text-white w-full py-3 font-bold rounded hover:bg-red-600"
-            onClick={submit}
-          >
-            회원가입 완료
-          </button>
+          <div className="signupbutton">
+            <button type="button" className="button1" onClick={submit}>
+              회원가입 완료
+            </button>
 
-          <button type="button" onClick={cancel}>
-            회원가입 취소
-          </button>
+            <button type="button" onClick={cancel}>
+              회원가입 취소
+            </button>
+          </div>
         </div>
       </div>
     </div>

@@ -1,8 +1,8 @@
 .divBody {
-  background-image: url(../img/지구test.png);
+  background-image: url(../img/휴대폰2.png);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 65%;
   overflow: hidden;
   margin: 10%;
   padding: 10%;
@@ -11,7 +11,8 @@
   border: 1px solid;
   flex: content;
   justify-content: center;
-  border-radius: 100%;
+  width: 80%;
+  /* border-radius: 100%; */
 }
 
 .h1-SignUp {
@@ -37,7 +38,7 @@
 
   margin: 5px;
   padding: 2px;
-  padding-right: 50%;
+  padding-right: 0%;
   border-radius: 5px;
   font-weight: bold;
   background-color: white;

@@ -1,8 +1,10 @@
 .MyPageMain {
   background-color: aqua;
-  width: 100vh;
-  height: 100%;
+  margin-left: 10%;
+  width: 80%;
+  height: 80%;
   display: flex;
+  align-items: center;
   justify-content: center;
   text-align: center;
 }
@@ -38,4 +40,18 @@
   padding: 20px;
   font-weight: bold;
   font-size: 30px;
+}
+
+#fileImg {
+  border: 2px solid;
+}
+
+#MyInfo {
+  border: 2px solid;
+  padding: 5px;
+}
+
+#Info {
+  border: 2px solid;
+  padding: 5px;
 }

@@ -50,9 +50,10 @@ export const Mypage = () => {
             <h1 className="MypagenicknameIf">{ifmation.nickname}</h1>
           </div>
           <div id="MypageProfileImg">프로필 이미지</div>
-          <img src={ifmation.file}></img>
+          <img id="fileImg" src={ifmation.file}></img>
         </div>
-        <div> {ifmation.memberInfo}</div>
+        이 부분은 자기 소개부분 입니다
+        <div id="Info"> {ifmation.memberInfo}</div>
         <div> 2. 개발직에 지원하게 된 이유와 노력에 대해 말해주세요 </div>
         <div> 3. 진행한 프로젝트에 대해 말해주세요 </div>
         <div> 4. SI, SM, 솔루션의 차이에 대해 말해주세요 </div>
@@ -61,7 +62,7 @@ export const Mypage = () => {
           <h1>여기 정보 빼내기!!!!!!!!!!!!!!!</h1>
 
           <div>
-            이 부분은 자기 소개부분 입니다
+            <div id="MyInfo">이 부분은 자기 소개부분 입니다</div>
             <h1>{ifmation.memberInfo}</h1>
           </div>
         </>
@@ -311,7 +312,7 @@ myDog.speak(); // "Dog barks" 출력 */}
 // userService.createUser({ name: "Alice" }); */}
         이러한 객체 지향 개념을 자바스크립트에서 활용하면 코드의 유연성과
         재사용성이 크게 향상되어 더 효율적이고 유지보수하기 쉬운 프로그램을
-        작성할 수 있습니다.
+        작성할 수 있습니다. loram*10
         <div> 5. 트러블슈팅의 정의와 진행경험, 느낀점(배운점) </div>
         <button onClick={UpDate}>수정</button>
         <button onClick={DeletePage}>회원탈퇴</button>
